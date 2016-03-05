@@ -95,9 +95,6 @@ GWindow::~GWindow()
 {
 
 }
-void GWindow::setHINSTANCE(HINSTANCE hInstance) {
-
-}
 void GWindow::messagePump(){
 	scene->OnInitialize();								//scene √ ±‚»≠
 

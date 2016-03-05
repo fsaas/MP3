@@ -20,6 +20,8 @@ public:
 	}
 
 	void OnDraw(){
+		g_Renderer->Clear();
+		g_Renderer->Begin();
 		g_Renderer->End();
 		g_Renderer->Present();
 	}
