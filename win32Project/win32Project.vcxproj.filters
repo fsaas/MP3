@@ -13,21 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="GameState">
+      <UniqueIdentifier>{024255f3-344c-4549-8cde-d50ac6500937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{829125bc-e069-47e7-b80e-55e907f091b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainProc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GWindow.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="GImage.cpp">
+      <Filter>FrameWork</Filter>
     </ClCompile>
     <ClCompile Include="GRenderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GImage.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>FrameWork</Filter>
     </ClCompile>
     <ClCompile Include="GScene.cpp">
+      <Filter>FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="GWindow.cpp">
+      <Filter>FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoState.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,6 +54,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoState.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
