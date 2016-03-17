@@ -7,32 +7,38 @@
 //global variables
 GRenderer * g_Renderer;
 //Scene Class
-class MyScene : public GScene{
+class MyScene : public GScene
+{
 
 public:
 	/*
 	 * Override functions
 	 */
-	void OnInitialize(){
+	void OnInitialize()
+	{
 	}
 
-	void OnDestroy(){
+	void OnDestroy()
+	{
 	}
 
-	void OnDraw(){
+	void OnDraw()
+	{
 		g_Renderer->Clear();
 		g_Renderer->Begin();
 		g_Renderer->End();
 		g_Renderer->Present();
 	}
 
-	void OnUpdate() {
+	void OnUpdate()
+	{
 
 	}
 
 };
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE , LPSTR , int ){
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE , LPSTR , int )
+{
 	MyScene scene;
 	GWindow window(&scene);
 	GRenderer renderer(&window);

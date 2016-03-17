@@ -56,21 +56,7 @@ GWindow::GWindow(GScene * scene)
 {
 	WNDCLASS WndClass = {
 		0, WndProc, 0, 0, GetModuleHandle( NULL ) , 0, 0, 0, 0, L"MyWindow"
-	};/*
-	WNDCLASSEX WndClass;
-	WndClass.hInstance = g_hInst;
-	WndClass.lpszClassName = TEXT("TEST");
-	WndClass.lpfnWndProc = WndProc;
-	WndClass.style = CS_DBLCLKS;
-	WndClass.cbSize = sizeof(WNDCLASSEX);
-	WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	WndClass.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
-	WndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
-	WndClass.lpszMenuName = NULL;
-	WndClass.cbClsExtra = 0;
-	WndClass.cbWndExtra = 0;
-	WndClass.hbrBackground = (HBRUSH)(COLOR_BTNFACE + 1);
-	*/
+	};
 	RegisterClass(&WndClass);
 
 	RECT rect = { 0, 0, 800, 600 };
