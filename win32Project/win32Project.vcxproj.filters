@@ -19,6 +19,12 @@
     <Filter Include="FrameWork">
       <UniqueIdentifier>{829125bc-e069-47e7-b80e-55e907f091b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameState\헤더">
+      <UniqueIdentifier>{d5f18cec-3c78-4987-bbe7-adb024de4c4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState\소스">
+      <UniqueIdentifier>{1e1b1fd9-8771-43b6-ba0d-421bd05e2189}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainProc.cpp">
@@ -37,7 +43,7 @@
       <Filter>FrameWork</Filter>
     </ClCompile>
     <ClCompile Include="LogoState.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>GameState\소스</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,7 +63,7 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="LogoState.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>GameState\헤더</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
