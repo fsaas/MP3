@@ -45,7 +45,7 @@ void GRenderer::Present(){
 }
 
 void GRenderer::Draw(GImage * image, int x, int y){
-	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), 0xff000000);
+	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), 0xfffffffff);
 }
 
 IDirect3DDevice9 * GRenderer::getDevice(){

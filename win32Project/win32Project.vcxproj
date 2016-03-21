@@ -96,6 +96,7 @@
     <ClInclude Include="mainProc.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="LogoState.bmp" />
     <Image Include="LogoState.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

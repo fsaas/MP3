@@ -17,7 +17,7 @@ public:
 	 */
 	void OnInitialize()
 	{
-		Logo = new LogoState(new GImage(g_Renderer, "LogoState.png"));
+		Logo = new LogoState(new GImage(g_Renderer, "LogoState.bmp"));
 		Logo->OnInitialize(g_Renderer);
 	}
 
