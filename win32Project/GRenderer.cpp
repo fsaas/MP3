@@ -5,8 +5,8 @@ GRenderer::GRenderer(GWindow * window)
 {
 	d3d9 = Direct3DCreate9(D3D_SDK_VERSION);
 	D3DPRESENT_PARAMETERS pp = { 0, };
-	pp.BackBufferWidth = 800;
-	pp.BackBufferHeight = 600;
+	pp.BackBufferWidth = 1366;
+	pp.BackBufferHeight = 768;
 	pp.BackBufferFormat = D3DFMT_A8R8G8B8;			//Alpha, Red, Green, Blue 8bit
 	pp.BackBufferCount = 1;
 	pp.EnableAutoDepthStencil = true;

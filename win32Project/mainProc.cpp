@@ -4,18 +4,21 @@
 #include "GRenderer.h"
 #include "GImage.h"
 #include "GScene.h"
+#include "LogoState.h"
 //global variables
 GRenderer * g_Renderer;
 //Scene Class
 class MyScene : public GScene
 {
-
+	LogoState* Logo;
 public:
 	/*
 	 * Override functions
 	 */
 	void OnInitialize()
 	{
+		Logo = new LogoState(new GImage(g_Renderer, "LogoState.png"));
+		Logo->OnInitialize(g_Renderer);
 	}
 
 	void OnDestroy()
@@ -26,13 +29,14 @@ public:
 	{
 		g_Renderer->Clear();
 		g_Renderer->Begin();
+		Logo->OnDraw(g_Renderer);
 		g_Renderer->End();
 		g_Renderer->Present();
 	}
 
 	void OnUpdate()
 	{
-
+		Logo->OnUpdate();
 	}
 
 };

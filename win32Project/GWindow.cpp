@@ -59,7 +59,7 @@ GWindow::GWindow(GScene * scene)
 	};
 	RegisterClass(&WndClass);
 
-	RECT rect = { 0, 0, 800, 600 };
+	RECT rect = { 0, 0, 1366, 768 };
 	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
 	int width = rect.right - rect.left;
