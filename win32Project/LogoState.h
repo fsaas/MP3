@@ -1,9 +1,9 @@
 #pragma once
 #include "GRenderer.h"
-#include "GScene.h"
+#include "GState.h"
 #include "GImage.h"
 #include "GWindow.h"
-class LogoState
+class LogoState : public GState
 {
 private:
 	GImage* bgImage;

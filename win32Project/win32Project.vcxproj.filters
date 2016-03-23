@@ -39,10 +39,10 @@
     <ClCompile Include="GRenderer.cpp">
       <Filter>FrameWork\소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GScene.cpp">
+    <ClCompile Include="GWindow.cpp">
       <Filter>FrameWork\소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GWindow.cpp">
+    <ClCompile Include="GState.cpp">
       <Filter>FrameWork\소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,10 +59,10 @@
     <ClInclude Include="GRenderer.h">
       <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GScene.h">
+    <ClInclude Include="GWindow.h">
       <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GWindow.h">
+    <ClInclude Include="GState.h">
       <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 #include <Windows.h>
 
-#include "GScene.h"
+#include "GState.h"
 
 bool IsKeyDown(BYTE key);
 int GetMouseX();
@@ -13,10 +13,10 @@ class GWindow
 {
 private:
 	HWND hWnd;
-	GScene * scene;
+	GState * scene;
 	WNDCLASS WndClass;
 public:
-	GWindow(GScene * scene);
+	GWindow(GState * scene);
 	~GWindow();
 	WNDCLASS getWndC() { return WndClass; }
 

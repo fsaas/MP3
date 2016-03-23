@@ -82,7 +82,7 @@
   <ItemGroup>
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="GRenderer.cpp" />
-    <ClCompile Include="GScene.cpp" />
+    <ClCompile Include="GState.cpp" />
     <ClCompile Include="GWindow.cpp" />
     <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
@@ -90,7 +90,7 @@
   <ItemGroup>
     <ClInclude Include="GImage.h" />
     <ClInclude Include="GRenderer.h" />
-    <ClInclude Include="GScene.h" />
+    <ClInclude Include="GState.h" />
     <ClInclude Include="GWindow.h" />
     <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />

@@ -52,7 +52,7 @@ LRESULT CALLBACK GWindow::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lP
 	return 0;
 }
 
-GWindow::GWindow(GScene * scene)
+GWindow::GWindow(GState * scene)
 {
 	this->WndClass = {
 		0, WndProc, 0, 0, GetModuleHandle( NULL ) , 0, 0, 0, 0, L"MyWindow"

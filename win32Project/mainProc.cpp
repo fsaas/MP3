@@ -3,12 +3,12 @@
 #include "GWindow.h"
 #include "GRenderer.h"
 #include "GImage.h"
-#include "GScene.h"
+#include "GState.h"
 #include "LogoState.h"
 //global variables
 GRenderer * g_Renderer;
 //Scene Class
-class MyScene : public GScene
+class MyScene : public GState
 {
 	LogoState* Logo;
 public:

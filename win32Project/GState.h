@@ -1,9 +1,9 @@
 #pragma once
-class GScene
+class GState
 {
 public:
-	GScene();
-	~GScene();
+	GState();
+	~GState();
 
 public:
 	virtual void OnInitialize();
