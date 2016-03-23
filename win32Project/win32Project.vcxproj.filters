@@ -19,45 +19,51 @@
     <Filter Include="FrameWork">
       <UniqueIdentifier>{829125bc-e069-47e7-b80e-55e907f091b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\소스 파일">
+      <UniqueIdentifier>{38f8e040-b098-484e-9181-4cc2c4398db1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\헤더 파일">
+      <UniqueIdentifier>{79f00df6-978c-48a6-b8a6-105af41cc191}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainProc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GImage.cpp">
-      <Filter>FrameWork</Filter>
-    </ClCompile>
-    <ClCompile Include="GRenderer.cpp">
-      <Filter>FrameWork</Filter>
-    </ClCompile>
-    <ClCompile Include="GScene.cpp">
-      <Filter>FrameWork</Filter>
-    </ClCompile>
-    <ClCompile Include="GWindow.cpp">
-      <Filter>FrameWork</Filter>
-    </ClCompile>
     <ClCompile Include="LogoState.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GImage.cpp">
+      <Filter>FrameWork\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GRenderer.cpp">
+      <Filter>FrameWork\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GScene.cpp">
+      <Filter>FrameWork\소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GWindow.cpp">
+      <Filter>FrameWork\소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainProc.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GWindow.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GRenderer.h">
+    <ClInclude Include="LogoState.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GImage.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>FrameWork\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderer.h">
+      <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GScene.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="LogoState.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="GWindow.h">
+      <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
