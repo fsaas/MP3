@@ -64,27 +64,24 @@ RECT GButton::getR()
 	return this->r;
 }
 
-void GButton::setClick()
+bool GButton::getClick()
 {
-	if (IsMouseDown(0)) {
-		if (GetMouseX() > r.left && GetMouseX() < r.right)
-			if (GetMouseY() > r.bottom && GetMouseY() < r.top)
-				IsClick = true;
+	if (GetMouseX() > getR('L') && GetMouseX() < getR('R')) {
+		if (GetMouseY() < getR('B') && GetMouseY() > getR('T')) {
+			return true;
+		}
 	}
-	else
-		IsClick = false;
+		return false;
 }
 
-void GButton::setOn()
+bool GButton::getOn()
 {
-	if (GetMouseX() > r.left && GetMouseX() < r.right) {
-		if (GetMouseY() > r.bottom && GetMouseY() < r.top)
-			IsOn = true;
+	if (GetMouseX() > getR('L') && GetMouseX() < getR('R')) {
+		if (GetMouseY() < getR('B') && GetMouseY() > getR('T')) {
+			return true;
+		}
 	}
-	else
-	{
-		IsOn = false;
-	}
+	return false;
 	
 	
 }

@@ -3,11 +3,13 @@
 #include "GState.h"
 #include "GImage.h"
 #include "GWindow.h"
+#include "GButton.h"
 class LogoState : public GState
 {
 private:
 	GImage* bgImage;
 	GImage* Buttons[3];
+	GButton* NButtons[3];
 	unsigned int bgAlpha;
 	int bgFadeState;
 	bool Start = false;

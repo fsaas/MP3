@@ -80,6 +80,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GButton.cpp" />
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="GRenderer.cpp" />
     <ClCompile Include="GState.cpp" />
@@ -88,6 +89,7 @@
     <ClCompile Include="mainProc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GButton.h" />
     <ClInclude Include="GImage.h" />
     <ClInclude Include="GRenderer.h" />
     <ClInclude Include="GState.h" />
