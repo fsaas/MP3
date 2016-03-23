@@ -1,6 +1,6 @@
 #include "GRenderer.h"
 #include "GImage.h"
-
+#include "d3dx9.h"
 GRenderer::GRenderer(GWindow * window)
 {
 	d3d9 = Direct3DCreate9(D3D_SDK_VERSION);
@@ -45,7 +45,11 @@ void GRenderer::Present(){
 }
 
 void GRenderer::Draw(GImage * image, int x, int y){
-	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), 0xfffffffff);
+	unsigned int color = 0xffffffff;
+	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), color);
+}
+void GRenderer::DrawSetAlpha(GImage * image, int x, int y, unsigned int alpha) {
+	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), alpha);
 }
 
 IDirect3DDevice9 * GRenderer::getDevice(){

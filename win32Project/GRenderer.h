@@ -25,7 +25,7 @@ public:
 	void Clear();								//화면 초기화
 	void Present();								
 	void Draw(GImage * image, int x, int y);	//화면 출력
-
+	void DrawSetAlpha(GImage * image, int x, int y, unsigned int alpha);
 public:
 	void Begin();
 	void End();
