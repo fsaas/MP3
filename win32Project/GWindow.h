@@ -14,10 +14,11 @@ class GWindow
 private:
 	HWND hWnd;
 	GScene * scene;
-
+	WNDCLASS WndClass;
 public:
 	GWindow(GScene * scene);
 	~GWindow();
+	WNDCLASS getWndC() { return WndClass; }
 
 public:
 	void messagePump();

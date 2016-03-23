@@ -54,11 +54,10 @@ LRESULT CALLBACK GWindow::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lP
 
 GWindow::GWindow(GScene * scene)
 {
-	WNDCLASS WndClass = {
+	this->WndClass = {
 		0, WndProc, 0, 0, GetModuleHandle( NULL ) , 0, 0, 0, 0, L"MyWindow"
 	};
 	RegisterClass(&WndClass);
-
 	RECT rect = { 0, 0, 1366, 768 };
 	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 

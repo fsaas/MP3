@@ -67,5 +67,14 @@
     <Image Include="LogoState.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="LogoButton1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="LogoButton2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="LogoButton3.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

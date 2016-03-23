@@ -96,6 +96,9 @@
     <ClInclude Include="mainProc.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="LogoButton1.bmp" />
+    <Image Include="LogoButton2.bmp" />
+    <Image Include="LogoButton3.bmp" />
     <Image Include="LogoState.bmp" />
     <Image Include="LogoState.png" />
   </ItemGroup>

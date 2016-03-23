@@ -3,6 +3,7 @@
 #include "d3dx9.h"
 GRenderer::GRenderer(GWindow * window)
 {
+
 	d3d9 = Direct3DCreate9(D3D_SDK_VERSION);
 	D3DPRESENT_PARAMETERS pp = { 0, };
 	pp.BackBufferWidth = 1366;
@@ -45,8 +46,7 @@ void GRenderer::Present(){
 }
 
 void GRenderer::Draw(GImage * image, int x, int y){
-	unsigned int color = 0xffffffff;
-	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), color);
+	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), 0xffffffff);
 }
 void GRenderer::DrawSetAlpha(GImage * image, int x, int y, unsigned int alpha) {
 	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), alpha);
