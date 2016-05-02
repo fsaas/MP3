@@ -84,6 +84,7 @@
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="GRenderer.cpp" />
     <ClCompile Include="GState.cpp" />
+    <ClCompile Include="GStateManager.cpp" />
     <ClCompile Include="GWindow.cpp" />
     <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
@@ -93,6 +94,7 @@
     <ClInclude Include="GImage.h" />
     <ClInclude Include="GRenderer.h" />
     <ClInclude Include="GState.h" />
+    <ClInclude Include="GStateManager.h" />
     <ClInclude Include="GWindow.h" />
     <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />
