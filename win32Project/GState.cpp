@@ -14,7 +14,7 @@ void GState::OnInitialize(){
 
 }
 
-void GState::OnUpdate(){
+void GState::OnUpdate(float dt){
 
 }
 

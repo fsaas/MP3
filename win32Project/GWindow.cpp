@@ -1,4 +1,6 @@
+#include "GStateManager.h"
 #include "GWindow.h"
+
 bool keyDown[256];
 int mouseX, mouseY;
 bool mouseButtonDown[3];
@@ -52,7 +54,7 @@ LRESULT CALLBACK GWindow::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lP
 	return 0;
 }
 
-GWindow::GWindow(GState * scene)
+GWindow::GWindow(GStateManager * stateMgr)
 {
 	this->WndClass = {
 		0, WndProc, 0, 0, GetModuleHandle( NULL ) , 0, 0, 0, 0, L"MyWindow"
@@ -72,7 +74,7 @@ GWindow::GWindow(GState * scene)
 	ShowWindow(hWnd, SW_SHOW);
 	UpdateWindow(hWnd);
 
-	this->scene = scene;
+	m_stateMgr = stateMgr;
 }
 
 
@@ -81,7 +83,9 @@ GWindow::~GWindow()
 
 }
 void GWindow::messagePump(){
-	scene->OnInitialize();								//scene 초기화
+	m_stateMgr->Initialize();							//stateManager 초기화
+
+	DWORD lastTick = GetTickCount(), dt = 0;			//타이머 변수 초기화
 
 	MSG msg;
 
@@ -94,13 +98,19 @@ void GWindow::messagePump(){
 			DispatchMessage(&msg);
 		}
 		else{
-			scene->OnUpdate();							//scene 갱신
-			scene->OnDraw();							//scene 출력
+			DWORD now = GetTickCount();					//현재 시간 설정
+
+			dt = now - lastTick;						//현재 프레임 - 이전 프레임 사이 시간 계산
+
+			m_stateMgr->Update(dt / 10.0f);				//scene 갱신
+			m_stateMgr->Draw();							//scene 출력
+
+			lastTick = now;
 			Sleep(1);
 		}
 	}
 
-	scene->OnDestroy();									//scene 객체 제거
+	m_stateMgr->Destroy();									//scene 객체 제거
 }
 
 HWND GWindow::getWindowHandle(){

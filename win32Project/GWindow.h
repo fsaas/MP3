@@ -2,21 +2,23 @@
 
 #include <Windows.h>
 
-#include "GState.h"
 
 bool IsKeyDown(BYTE key);
 int GetMouseX();
 int GetMouseY();
 bool IsMouseDown(int mouseButton);
 
+class GStateManager;
+
 class GWindow
 {
 private:
 	HWND hWnd;
-	GState * scene;
 	WNDCLASS WndClass;
+	GStateManager * m_stateMgr;
+
 public:
-	GWindow(GState * scene);
+	GWindow(GStateManager * stateMgr);
 	~GWindow();
 	WNDCLASS getWndC() { return WndClass; }
 

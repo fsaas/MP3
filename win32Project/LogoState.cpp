@@ -1,14 +1,15 @@
+#include "mainProc.h"
 #include "LogoState.h"
 
 
-LogoState::LogoState(GImage* image, GImage* BtImage1, GImage* BtImage2, GImage* BtImage3)
+LogoState::LogoState()
 {
-	this->bgImage = image;
+	this->bgImage = new GImage(Renderer(), "LogoState.bmp");
 	this->bgAlpha = 0xffffff;
 	this->bgFadeState = 0;
-	this->Buttons[0] = BtImage1;
-	this->Buttons[1] = BtImage2;
-	this->Buttons[2] = BtImage3;
+	this->Buttons[0] = new GImage(Renderer(), "LogoButton1.bmp");
+	this->Buttons[1] = new GImage(Renderer(), "LogoButton2.bmp");
+	this->Buttons[2] = new GImage(Renderer(), "LogoButton3.bmp");
 	RECT r[3];
 	for (int i = 0; i < 3; i++) {
 		r[i].bottom = 293 + (i * 175);
@@ -16,9 +17,9 @@ LogoState::LogoState(GImage* image, GImage* BtImage1, GImage* BtImage2, GImage* 
 		r[i].left = 533 + (i * 0);
 		r[i].right = 783 + (i * 0);
 	}
-	this->NButtons[0] = new GButton(BtImage1, r[0]);
-	this->NButtons[1] = new GButton(BtImage2, r[1]);
-	this->NButtons[2] = new GButton(BtImage3, r[2]);
+	this->NButtons[0] = new GButton(this->Buttons[0], r[0]);
+	this->NButtons[1] = new GButton(this->Buttons[1], r[1]);
+	this->NButtons[2] = new GButton(this->Buttons[2], r[2]);
 }
 
 
@@ -26,10 +27,10 @@ LogoState::~LogoState()
 {
 }
 
-void LogoState::OnInitialize(GRenderer* gr) {
+void LogoState::OnInitialize() {
 
 }
-void LogoState::OnUpdate() {
+void LogoState::OnUpdate(float dt) {
 	if (NButtons[0]->getOn()|| NButtons[1]->getOn()|| NButtons[2]->getOn())
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
@@ -48,10 +49,11 @@ void LogoState::OnUpdate() {
 	if (bgFadeState == 1)
 		bgAlpha = fadeOut(getBgAlpha());
 }
-void LogoState::OnDraw(GRenderer* gr) {
-	gr->DrawSetAlpha(getImage(), 0, 0, getBgAlpha());
+void LogoState::OnDraw() {
+	Renderer()->DrawSetAlpha(getImage(), 0, 0, getBgAlpha());
+	
 	for (int i = 0; i < 3; i++) {
-		gr->Draw(NButtons[i]->getImage(), NButtons[i]->getR('L'), NButtons[i]->getR('T'));
+		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR('L'), NButtons[i]->getR('T'));
 	}
 }
 void LogoState::OnDestroy() {

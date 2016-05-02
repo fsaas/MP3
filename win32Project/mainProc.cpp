@@ -1,50 +1,18 @@
 #include <Windows.h>
 #include "mainProc.h"
 #include "GWindow.h"
-#include "GRenderer.h"
 #include "GImage.h"
 #include "GState.h"
 #include "LogoState.h"
+
 //global variables
 GRenderer * g_Renderer;
-//Scene Class
-class MyScene : public GState
-{
-	LogoState* Logo;
-public:
-	/*
-	 * Override functions
-	 */
-	void OnInitialize()
-	{
-		Logo = new LogoState(new GImage(g_Renderer, "LogoState.bmp"),new GImage(g_Renderer, "LogoButton1.bmp"), new GImage(g_Renderer, "LogoButton2.bmp"), new GImage(g_Renderer, "LogoButton3.bmp"));
-		Logo->OnInitialize(g_Renderer);
-	}
-
-	void OnDestroy()
-	{
-	}
-
-	void OnDraw()
-	{
-		g_Renderer->Clear();
-		g_Renderer->Begin();
-		Logo->OnDraw(g_Renderer);
-		g_Renderer->End();
-		g_Renderer->Present();
-	}
-
-	void OnUpdate()
-	{
-		Logo->OnUpdate();
-	}
-
-};
+GStateManager * g_StateMgr;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE , LPSTR , int )
-{
-	MyScene scene;
-	GWindow window(&scene);
+{	
+	g_StateMgr = new GStateManager();
+	GWindow window(g_StateMgr);
 	GRenderer renderer(&window);
 	g_Renderer = &renderer;
 
@@ -52,4 +20,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE , LPSTR , int )
 	
 	return 0;
 	
+}
+
+GRenderer * Renderer() {
+	return g_Renderer;
+}
+
+GStateManager * StateMgr() {
+	return g_StateMgr;
 }

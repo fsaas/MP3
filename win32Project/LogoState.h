@@ -25,11 +25,11 @@ public:
 		color -= 0x01ffffff;
 		return color;
 	}
-	LogoState(GImage* image, GImage* BtImage1, GImage* BtImage2, GImage* BtImage3);
+	LogoState();
 	~LogoState();
-	void OnUpdate();
-	void OnDraw(GRenderer* gr);
+	void OnUpdate(float dt);
+	void OnDraw();
 	void OnDestroy();
-	void OnInitialize(GRenderer* gr);
+	void OnInitialize();
 };
 
