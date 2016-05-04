@@ -35,7 +35,7 @@ void GStateManager::Destroy() {
 void GStateManager::Draw() {
 	Renderer()->Clear();
 	Renderer()->Begin();
-	//TODO: 咯扁俊辑 Scene Draw 贸府
+	//TODO: Scene Draw 贸府
 	if (currentState != NOT_SET_STATE)
 		m_states[currentState]->OnDraw();
 
@@ -44,8 +44,14 @@ void GStateManager::Draw() {
 }
 
 void GStateManager::Update(float dt) {
-	//TODO: 咯扁俊辑 Scene Update 贸府
+	//TODO: Scene Update 贸府
 	if (currentState != NOT_SET_STATE)
 		m_states[currentState]->OnUpdate(dt);
+}
 
+void GStateManager::ChangeState(int changeStateKey) {
+	//TODO: Scene 傈券 贸府
+	m_states[currentState]->OnDestroy();
+
+	currentState = changeStateKey;
 }

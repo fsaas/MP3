@@ -57,4 +57,8 @@ void LogoState::OnDraw() {
 	}
 }
 void LogoState::OnDestroy() {
+	for (int i = 0; i < 3; i++) {
+		if (this->NButtons[i] != nullptr) delete NButtons[i];
+		if (this->Buttons[i] != nullptr) delete Buttons[i];
+	}
 }

@@ -16,6 +16,7 @@ public:
 	void Destroy();
 	void Update(float dt);
 	void Draw();
+	void ChangeState(int changeStateKey);
 
 private:
 	GState * m_states[STATE_NUM];
