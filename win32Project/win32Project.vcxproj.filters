@@ -49,7 +49,7 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GStateManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>FrameWork\소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +75,7 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GStateManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
