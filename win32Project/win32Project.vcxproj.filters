@@ -51,7 +51,14 @@
     <ClCompile Include="GStateManager.cpp">
       <Filter>FrameWork\소스 파일</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="StageState.cpp">
+=======
+    <ClCompile Include="BlockManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+>>>>>>> cafddaf862d72f0448c93f72f05f0aa4c469c126
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +87,14 @@
     <ClInclude Include="GStateManager.h">
       <Filter>FrameWork\헤더 파일</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="StageState.h">
+=======
+    <ClInclude Include="BlockManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+>>>>>>> cafddaf862d72f0448c93f72f05f0aa4c469c126
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
