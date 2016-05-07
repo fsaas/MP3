@@ -3,6 +3,7 @@
 #include "GState.h"
 #include "GStateManager.h"
 #include "LogoState.h"
+#include "StageState.h"
 
 
 
@@ -19,7 +20,8 @@ GStateManager::~GStateManager()
 
 void GStateManager::Initialize() {
 	m_states[LOGO_STATE] = new LogoState();
-	
+	m_states[STAGE_STATE] = new StageState();
+
 	currentState = LOGO_STATE;
 }
 

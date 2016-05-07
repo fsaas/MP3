@@ -2,6 +2,7 @@
 #define STATE_NUM 3 //STATE의 최대 개수를 여기서 지정
 #define NOT_SET_STATE -1
 #define LOGO_STATE 0	//set LogoState
+#define STAGE_STATE 2 //set StageStage
 
 class GState;
 

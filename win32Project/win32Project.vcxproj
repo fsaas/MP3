@@ -88,6 +88,7 @@
     <ClCompile Include="GWindow.cpp" />
     <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
+    <ClCompile Include="StageState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GButton.h" />
@@ -98,6 +99,7 @@
     <ClInclude Include="GWindow.h" />
     <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />
+    <ClInclude Include="StageState.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="LogoButton1.bmp" />

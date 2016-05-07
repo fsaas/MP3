@@ -7,9 +7,6 @@ LogoState::LogoState()
 	this->bgImage = new GImage(Renderer(), "LogoState.bmp");
 	this->bgAlpha = 0xffffff;
 	this->bgFadeState = 0;
-	this->Buttons[0] = new GImage(Renderer(), "LogoButton1.bmp");
-	this->Buttons[1] = new GImage(Renderer(), "LogoButton2.bmp");
-	this->Buttons[2] = new GImage(Renderer(), "LogoButton3.bmp");
 	RECT r[3];
 	for (int i = 0; i < 3; i++) {
 		r[i].bottom = 293 + (i * 175);
@@ -17,9 +14,9 @@ LogoState::LogoState()
 		r[i].left = 533 + (i * 0);
 		r[i].right = 783 + (i * 0);
 	}
-	this->NButtons[0] = new GButton(this->Buttons[0], r[0]);
-	this->NButtons[1] = new GButton(this->Buttons[1], r[1]);
-	this->NButtons[2] = new GButton(this->Buttons[2], r[2]);
+	this->NButtons[0] = new GButton(new GImage(Renderer(), "LogoButton1.bmp"), r[0]);
+	this->NButtons[1] = new GButton(new GImage(Renderer(), "LogoButton2.bmp"), r[1]);
+	this->NButtons[2] = new GButton(new GImage(Renderer(), "LogoButton3.bmp"), r[2]);
 }
 
 
@@ -37,7 +34,7 @@ void LogoState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
 	if (IsMouseDown(0)) {
 		if (NButtons[0]->getClick()) {
-			StateMgr()->ChangeState(3);
+			StateMgr()->ChangeState(2);
 		}
 		if (NButtons[1]->getClick()) {
 			PostQuitMessage(0);
@@ -62,6 +59,5 @@ void LogoState::OnDraw() {
 void LogoState::OnDestroy() {
 	for (int i = 0; i < 3; i++) {
 		if (this->NButtons[i] != nullptr) delete NButtons[i];
-		if (this->Buttons[i] != nullptr) delete Buttons[i];
 	}
 }
