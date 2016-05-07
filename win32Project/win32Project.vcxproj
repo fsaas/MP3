@@ -80,6 +80,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="GButton.cpp" />
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="GRenderer.cpp" />
@@ -90,6 +92,8 @@
     <ClCompile Include="mainProc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
+    <ClInclude Include="BlockManager.h" />
     <ClInclude Include="GButton.h" />
     <ClInclude Include="GImage.h" />
     <ClInclude Include="GRenderer.h" />
