@@ -1,14 +1,18 @@
+
+#include <fstream>
 #include "StageState.h"
 #include "mainProc.h"
 
 
 
-StageState::StageState()
+StageState::StageState(int stageNum)
 {
 	this->bgImage = new GImage(Renderer(), "LogoState.bmp");
+	std::ifstream stage("stage%d.txt", stageNum);
 	RECT r[15];
 	for (int i = 0; i < 15; i++) {
 		if (i >= 0 && i <= 7) {
+			Blocks[i] = NILL;
 			if (i >= 0 && i <= 3) {
 				r[i].top = 100;
 				r[i].bottom = r[i].top + 100;
@@ -25,7 +29,7 @@ StageState::StageState()
 		if (i >= 8 && i <= 11) {
 			r[i].top = 500;
 			r[i].bottom = r[i].top + 100;
-			r[i].left = 200 + (i * 240);
+			r[i].left = 200 + ((i%4) * 240);
 			r[i].right = r[i].left + 200;
 		}
 	}
