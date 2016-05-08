@@ -3,12 +3,12 @@ class Block
 {
 private:
 	char brief[10];
-	char def[100];
+	char Actual[100];
 
 public:
-	Block(char* givenBrief , char* givenDef);
+	Block(char* givenBrief , char* givenActual);
 	~Block();
 	char* getBrief();
-	char* getDef();
+	char* getActual();
 };
 
