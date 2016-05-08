@@ -1,10 +1,10 @@
 #include "Block.h"
 #include<string.h>
 
-Block::Block(char* givenBrief, char* givenDef)
+Block::Block(char* givenBrief, char* givenActual)
 {
 	strcpy(brief, givenBrief);
-	strcpy(def, givenDef);
+	strcpy(Actual, givenActual);
 }
 
 
@@ -17,7 +17,7 @@ char* Block::getBrief()
 {
 	return brief;
 }
-char* Block::getDef()
+char* Block::getActual()
 {
-	return def;
+	return Actual;
 }
