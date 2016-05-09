@@ -6,7 +6,7 @@
 #include "GButton.h"
 #include "BlockManager.h"
 
-#define NILL new Block(NULL,NULL)
+#define NILL new Block("","")
 
 class StageState : public GState
 {

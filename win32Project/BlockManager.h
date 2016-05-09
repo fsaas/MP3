@@ -8,6 +8,6 @@ private:
 public:
 	BlockManager();
 	~BlockManager();
-	Block getBlock(int blockNum);
+	Block* getBlock(int blockNum);
 };
 
