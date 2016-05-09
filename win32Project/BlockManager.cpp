@@ -16,7 +16,7 @@ BlockManager::~BlockManager()
 {
 }
 
-Block BlockManager::getBlock(int blockNum)
+Block* BlockManager::getBlock(int blockNum)
 {
-	return *block[blockNum];
+	return block[blockNum];
 }
