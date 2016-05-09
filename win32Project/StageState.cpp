@@ -5,7 +5,7 @@
 
 
 
-StageState::StageState(int stageNum)
+StageState::StageState()
 {
 	this->bgImage = new GImage(Renderer(), "LogoState.bmp");
 	std::ifstream stage("stage%d.txt", stageNum);

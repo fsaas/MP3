@@ -1,5 +1,6 @@
+
+#include <string.h>
 #include "Block.h"
-#include<string.h>
 
 Block::Block(char* givenBrief, char* givenActual)
 {
