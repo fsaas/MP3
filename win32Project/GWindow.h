@@ -18,7 +18,7 @@ private:
 	GStateManager * m_stateMgr;
 
 public:
-	GWindow(GStateManager * stateMgr);
+	GWindow();
 	~GWindow();
 	WNDCLASS getWndC() { return WndClass; }
 

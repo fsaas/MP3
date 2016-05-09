@@ -1,3 +1,4 @@
+#include "mainProc.h"
 #include "GStateManager.h"
 #include "GWindow.h"
 
@@ -54,7 +55,7 @@ LRESULT CALLBACK GWindow::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lP
 	return 0;
 }
 
-GWindow::GWindow(GStateManager * stateMgr)
+GWindow::GWindow()
 {
 	this->WndClass = {
 		0, WndProc, 0, 0, GetModuleHandle( NULL ) , 0, 0, 0, 0, L"MyWindow"
@@ -74,7 +75,7 @@ GWindow::GWindow(GStateManager * stateMgr)
 	ShowWindow(hWnd, SW_SHOW);
 	UpdateWindow(hWnd);
 
-	m_stateMgr = stateMgr;
+	m_stateMgr = StateMgr();
 }
 
 
