@@ -84,6 +84,7 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="GButton.cpp" />
+    <ClCompile Include="GenreSelect.cpp" />
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="GRenderer.cpp" />
     <ClCompile Include="GState.cpp" />
@@ -97,6 +98,7 @@
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockManager.h" />
     <ClInclude Include="GButton.h" />
+    <ClInclude Include="GenreSelect.h" />
     <ClInclude Include="GImage.h" />
     <ClInclude Include="GRenderer.h" />
     <ClInclude Include="GState.h" />

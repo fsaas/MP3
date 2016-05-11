@@ -4,7 +4,7 @@
 #include "GStateManager.h"
 #include "LogoState.h"
 #include "StageState.h"
-
+#include "GenreSelect.h"
 
 
 GStateManager::GStateManager()
@@ -20,13 +20,14 @@ GStateManager::~GStateManager()
 
 void GStateManager::Initialize() {
 	m_states[LOGO_STATE] = new LogoState();
+	m_states[GENRE_SCENE] = new GenreSelect();
 	m_states[STAGE_STATE] = new StageState();
 
 	currentState = LOGO_STATE;
 }
 
 void GStateManager::Destroy() {
-	for (int i = 0; i < STATE_NUM; i++) {
+	for (int i = 0; i <= STATE_NUM; i++) {
 		if (m_states[i] != nullptr) {
 			m_states[i]->OnDestroy();
 			delete m_states[i];
