@@ -15,10 +15,10 @@ private:
 	GButton* NButtons[15];
 	Block* Blocks[8];
 	int stageNum;
-	
+	int genreType;
 	
 public:
-	StageState();
+	StageState(int type);
 	~StageState();
 	GImage* getImage() { return bgImage; }
 	GImage* getButtonImage(int i) { return NButtons[i]->getImage(); }

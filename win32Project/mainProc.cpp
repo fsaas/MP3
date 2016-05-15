@@ -12,7 +12,7 @@ GStateManager * g_StateMgr;
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE , LPSTR , int )
 {	
 	g_StateMgr = new GStateManager();
-	GWindow window(g_StateMgr);
+	GWindow window;
 	GRenderer renderer(&window);
 	g_Renderer = &renderer;
 

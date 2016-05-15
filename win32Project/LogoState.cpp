@@ -4,7 +4,7 @@
 
 LogoState::LogoState()
 {
-	this->bgImage = new GImage(Renderer(), "LogoState.bmp");
+	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 	this->bgAlpha = 0xffffff;
 	this->bgFadeState = 0;
 	RECT r[3];
@@ -13,15 +13,17 @@ LogoState::LogoState()
 		r[i].top = 168 + (i * 175);
 		r[i].left = 533 + (i * 0);
 		r[i].right = 783 + (i * 0);
+
+		this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/LogoButton1.bmp"), r[i]);
 	}
-	this->NButtons[0] = new GButton(new GImage(Renderer(), "LogoButton1.bmp"), r[0]);
-	this->NButtons[1] = new GButton(new GImage(Renderer(), "LogoButton2.bmp"), r[1]);
-	this->NButtons[2] = new GButton(new GImage(Renderer(), "LogoButton3.bmp"), r[2]);
 }
 
 
 LogoState::~LogoState()
 {
+	for (int i = 0; i < 3; i++) {
+		if (this->NButtons[i] != nullptr) delete NButtons[i];
+	}
 }
 
 void LogoState::OnInitialize() {
@@ -57,7 +59,4 @@ void LogoState::OnDraw() {
 	}
 }
 void LogoState::OnDestroy() {
-	for (int i = 0; i < 3; i++) {
-		if (this->NButtons[i] != nullptr) delete NButtons[i];
-	}
 }
