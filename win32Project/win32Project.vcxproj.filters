@@ -12,6 +12,7 @@
     <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
     <ClCompile Include="StageState.cpp" />
+    <ClCompile Include="GenreSelect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -25,6 +26,7 @@
     <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />
     <ClInclude Include="StageState.h" />
+    <ClInclude Include="GenreSelect.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="LogoButton1.bmp" />
