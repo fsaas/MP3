@@ -21,13 +21,12 @@ GStateManager::~GStateManager()
 void GStateManager::Initialize() {
 	m_states[LOGO_STATE] = new LogoState();
 	m_states[GENRE_SCENE] = new GenreSelect();
-	m_states[STAGE_STATE] = new StageState();
 
 	currentState = LOGO_STATE;
 }
 
 void GStateManager::Destroy() {
-	for (int i = 0; i <= STATE_NUM; i++) {
+	for (int i = 0; i < STATE_NUM; i++) {
 		if (m_states[i] != nullptr) {
 			m_states[i]->OnDestroy();
 			delete m_states[i];
@@ -57,4 +56,15 @@ void GStateManager::ChangeState(int changeStateKey) {
 	m_states[currentState]->OnDestroy();
 
 	currentState = changeStateKey;
+}
+
+void GStateManager::SetState(GState * state, int stateNum) {
+	//m_states[stateNum]에 state 객체를 저장.
+	//기존 객체가 존재할 경우, 기존 객체를 삭제 후 저장
+	if (m_states[stateNum] != nullptr) {
+		m_states[stateNum]->OnDestroy();
+		delete m_states[stateNum];
+	}
+
+	m_states[stateNum] = state;
 }

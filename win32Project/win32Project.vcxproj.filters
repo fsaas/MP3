@@ -4,35 +4,83 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="GButton.cpp" />
-    <ClCompile Include="GImage.cpp" />
-    <ClCompile Include="GRenderer.cpp" />
-    <ClCompile Include="GState.cpp" />
-    <ClCompile Include="GStateManager.cpp" />
-    <ClCompile Include="GWindow.cpp" />
-    <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
-    <ClCompile Include="StageState.cpp" />
-    <ClCompile Include="GenreSelect.cpp" />
+    <ClCompile Include="GImage.cpp">
+      <Filter>프레임워크\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="GRenderer.cpp">
+      <Filter>프레임워크\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="GState.cpp">
+      <Filter>프레임워크\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="GStateManager.cpp">
+      <Filter>프레임워크\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="GWindow.cpp">
+      <Filter>프레임워크\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="GenreSelect.cpp">
+      <Filter>State\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoState.cpp">
+      <Filter>State\소스</Filter>
+    </ClCompile>
+    <ClCompile Include="StageState.cpp">
+      <Filter>State\소스</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockManager.h" />
     <ClInclude Include="GButton.h" />
-    <ClInclude Include="GImage.h" />
-    <ClInclude Include="GRenderer.h" />
-    <ClInclude Include="GState.h" />
-    <ClInclude Include="GStateManager.h" />
-    <ClInclude Include="GWindow.h" />
-    <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />
-    <ClInclude Include="StageState.h" />
-    <ClInclude Include="GenreSelect.h" />
+    <ClInclude Include="GImage.h">
+      <Filter>프레임워크\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GRenderer.h">
+      <Filter>프레임워크\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GState.h">
+      <Filter>프레임워크\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GStateManager.h">
+      <Filter>프레임워크\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GWindow.h">
+      <Filter>프레임워크\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GenreSelect.h">
+      <Filter>State\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoState.h">
+      <Filter>State\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="StageState.h">
+      <Filter>State\헤더</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="LogoButton1.bmp" />
-    <Image Include="LogoButton2.bmp" />
-    <Image Include="LogoButton3.bmp" />
-    <Image Include="LogoState.bmp" />
-    <Image Include="LogoState.png" />
+    <Filter Include="프레임워크">
+      <UniqueIdentifier>{d25734d3-f696-4033-a51b-d3429aaa3923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="프레임워크\소스">
+      <UniqueIdentifier>{2648494e-3ea6-40cb-96cf-e0695fbd62ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="프레임워크\헤더">
+      <UniqueIdentifier>{1c598b2d-f00f-4c17-a4b7-93b484de8023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State">
+      <UniqueIdentifier>{3f29543b-7530-4dcc-8b1e-abbd9afef5c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State\소스">
+      <UniqueIdentifier>{53299385-fb3d-4ce2-9fe4-719b6cf7792f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="State\헤더">
+      <UniqueIdentifier>{e20b4cfb-bbe1-466d-b58f-454d23ab9b70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{9d8544d0-fce4-41db-869b-e75a906bb854}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
