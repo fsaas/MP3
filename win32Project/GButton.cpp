@@ -12,6 +12,11 @@ GButton::GButton(GImage * image, int x, int y)
 	m_rect->bottom = y + image->getHeight();
 }
 
+GButton::GButton(GImage * image, RECT * rect) {
+	this->image = image;
+	m_rect = rect;
+}
+
 GButton::~GButton()
 {
 	free(m_rect);
