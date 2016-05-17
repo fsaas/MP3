@@ -1,6 +1,7 @@
 #include <fstream>
 #include "StageState.h"
 #include "mainProc.h"
+#include <stdio.h>
 
 StageState::StageState(int type) : GState()
 {
@@ -8,31 +9,27 @@ StageState::StageState(int type) : GState()
 
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 	std::ifstream stage("stage%d.txt", stageNum);
-	RECT r[15];
+	int x, y;
+	char temp[256] = { 0, };
+
 	for (int i = 0; i < 15; i++) {
 		if (i >= 0 && i <= 7) {
 			Blocks[i] = NILL;
 			if (i >= 0 && i <= 3) {
-				r[i].top = 100;
-				r[i].bottom = r[i].top + 85;
-				r[i].left = 200 + ((i % 4) * 200);
-				r[i].right = r[i].left + 85;
+				y = 100;
+				x = 200 + ((i % 4) * 200);
 			}
 			if( i>=4 && i<=7) {
-				r[i].top = 250;
-				r[i].bottom = r[i].top + 85;
-				r[i].left = 200 + ((i % 4) * 200);
-				r[i].right = r[i].left + 85;
+				y = 250;
+				x = 200 + ((i % 4) * 200);
 			}
 		}
 		if (i >= 8 && i <= 11) {
-			r[i].top = 500;
-			r[i].bottom = r[i].top + 100;
-			r[i].left = 200 + ((i%4) * 240);
-			r[i].right = r[i].left + 200;
+			y = 500;
+			x = 200 + ((i%4) * 240);
 		}
-
-		this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/StageImg/stageX.bmp"), r[i]);
+		sprintf(temp, "./Resource/StageImg/stageX.bmp");
+		this->NButtons[i] = new GButton(new GImage(Renderer(), temp), x, y);
 	}
 }
 
@@ -72,7 +69,7 @@ void StageState::OnUpdate(float dt) {
 void StageState::OnDraw() {
 
 	for (int i = 0; i < 15; i++) {
-		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR('L'), NButtons[i]->getR('T'));
+		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
 	}
 }
 void StageState::OnDestroy() {
