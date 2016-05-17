@@ -2,86 +2,61 @@
 
 
 
-GButton::GButton(GImage * image, RECT r)
+GButton::GButton(GImage * image, int x, int y)
 {
-	setImage(image);
-	setR(r);
+	this->image = image;
+	m_rect = (RECT*)malloc(sizeof(RECT));
+	m_rect->left = x;
+	m_rect->right = x + image->getWidth();
+	m_rect->top = y;
+	m_rect->bottom = y + image->getHeight();
+}
+
+GButton::GButton(GImage * image, RECT * rect) {
+	this->image = image;
+	m_rect = rect;
 }
 
 GButton::~GButton()
 {
+	free(m_rect);
 }
 
-void GButton::setR(int i, char a)
-{
-	switch (a)
-	{
-	case 'L':
-		this->r.left = i;
-		break;
-	case 'R':
-		this->r.right = i;
-		break;
-	case 'T':
-		this->r.top = i;
-		break;
-	case 'B':
-		this->r.bottom = i;
-		break;
-	default:
-		break;
-	}
-
-}
-void GButton::setR(RECT r)
-{
-	this->r = r;
-}
-int GButton::getR(char a)
-{
-	switch (a)
-	{
-	case 'L':
-		return this->r.left;
-		break;
-	case 'R':
-		return this->r.right;
-		break;
-	case 'T':
-		return this->r.top;
-		break;
-	case 'B':
-		return this->r.bottom;
-		break;
-	default:
-		break;
-	}
-
+void GButton::setR(RECT * rect) {
+	m_rect = rect;
 }
 
-RECT GButton::getR()
+RECT * GButton::getR()
 {
-	return this->r;
+	return m_rect;
 }
 
 bool GButton::getClick()
 {
-	if (GetMouseX() > getR('L') && GetMouseX() < getR('R')) {
-		if (GetMouseY() < getR('B') && GetMouseY() > getR('T')) {
+	if (GetMouseX() > m_rect->left && GetMouseX() < m_rect->right) {
+		if (GetMouseY() < m_rect->bottom && GetMouseY() > m_rect->top) {
 			return true;
 		}
 	}
-		return false;
+	
+	return false;
 }
 
 bool GButton::getOn()
 {
-	if (GetMouseX() > getR('L') && GetMouseX() < getR('R')) {
-		if (GetMouseY() < getR('B') && GetMouseY() > getR('T')) {
+	if (GetMouseX() > m_rect->left && GetMouseX() < m_rect->right) {
+		if (GetMouseY() < m_rect->bottom && GetMouseY() > m_rect->top) {
 			return true;
 		}
 	}
+
 	return false;
-	
-	
+}
+
+void GButton::setImage(GImage * image) {
+	this->image = image;
+}
+
+GImage * GButton::getImage() {
+	return this->image;
 }

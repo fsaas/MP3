@@ -6,16 +6,17 @@ class GButton
 {
 private:
 	GImage* image;
-	RECT r;
+	RECT* m_rect;
 public:
-	GButton(GImage* image,RECT r);
+	GButton(GImage* image, int x, int y);
+	GButton(GImage * image, RECT * rect);
 	~GButton();
-	void setImage(GImage* image) { this->image = image; }
-	void setR(int i, char a);
-	void setR(RECT r);
-	GImage* getImage() { return image; }
-	int getR(char a);
-	RECT getR();
+	void setImage(GImage* image);
+	GImage* getImage();
+
+	void setR(RECT * rect);
+	RECT* getR();
+
 	bool getClick();
 	bool getOn();
 };
