@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <fstream>
+#include <iostream>
 #include "StageState.h"
 #include "mainProc.h"
 #include <stdio.h>
@@ -9,7 +9,6 @@ StageState::StageState(int type) : GState()
 	this->genreType = type;
 
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
-	std::ifstream stage("stage%d.txt", stageNum);
 	int x, y;
 	char temp[256] = { 0, };
 

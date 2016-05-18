@@ -1,11 +1,12 @@
 #pragma once
-#define STATE_NUM 5 //STATE의 최대 개수를 여기서 지정
+#define STATE_NUM 6 //STATE의 최대 개수를 여기서 지정
 #define NOT_SET_STATE -1
 #define LOGO_STATE 0	//set LogoState
 #define GENRE_SCENE 1
 #define ACTION_STAGE 2	//액션 스테이지를 선택했을 때
 #define BARRAGEACTION_STAGE 3	//탄막 스테이지를 선택했을 때
 #define STAGE_STATE 4 //set StageStage
+#define PROBLEM_STATE 5	//set ProblemState
 
 /* 
  * 제발 위 선언부에 state 추가하고, STATE_NUM 수정했으면, StateMgr Intialize부분에서 State 객체 하나씩 할당하세요.

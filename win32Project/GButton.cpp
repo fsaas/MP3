@@ -1,5 +1,5 @@
 #include "GButton.h"
-
+#include "GImage.h"
 
 
 GButton::GButton(GImage * image, int x, int y)

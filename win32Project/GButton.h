@@ -1,7 +1,9 @@
 #pragma once
-#include "GImage.h"
 #include "GRenderer.h"
 #include "GWindow.h"
+
+class GImage;
+
 class GButton
 {
 private:
