@@ -1,20 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "mainProc.h"
 #include "LogoState.h"
-
+#include <stdio.h>
 
 LogoState::LogoState()
 {
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 	this->bgAlpha = 0xffffff;
 	this->bgFadeState = 0;
-	RECT r[3];
+	RECT r[3]; char temp[256] = { 0, };
 	for (int i = 0; i < 3; i++) {
-		r[i].bottom = 293 + (i * 175);
-		r[i].top = 168 + (i * 175);
-		r[i].left = 533 + (i * 0);
-		r[i].right = 783 + (i * 0);
-
-		this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/LogoButton1.bmp"), r[i]);
+		sprintf(temp, "./Resource/LogoButton%d.bmp", i + 1);
+		this->NButtons[i] = new GButton(new GImage(Renderer(), temp), 533, 168 + (i * 175));
 	}
 }
 
@@ -36,7 +33,7 @@ void LogoState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
 	if (IsMouseDown(0)) {
 		if (NButtons[0]->getClick()) {
-			StateMgr()->ChangeState(1);
+			StateMgr()->ChangeState(5);
 		}
 		if (NButtons[1]->getClick()) {
 			PostQuitMessage(0);
@@ -55,7 +52,7 @@ void LogoState::OnDraw() {
 	Renderer()->DrawSetAlpha(getImage(), 0, 0, getBgAlpha());
 	
 	for (int i = 0; i < 3; i++) {
-		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR('L'), NButtons[i]->getR('T'));
+		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
 	}
 }
 void LogoState::OnDestroy() {

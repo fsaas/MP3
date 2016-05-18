@@ -5,6 +5,7 @@
 #include "LogoState.h"
 #include "StageState.h"
 #include "GenreSelect.h"
+#include "ProblemState.h"
 
 
 GStateManager::GStateManager()
@@ -21,6 +22,7 @@ GStateManager::~GStateManager()
 void GStateManager::Initialize() {
 	m_states[LOGO_STATE] = new LogoState();
 	m_states[GENRE_SCENE] = new GenreSelect();
+	m_states[PROBLEM_STATE] = new ProblemState();
 
 	currentState = LOGO_STATE;
 }

@@ -29,6 +29,9 @@
     <ClCompile Include="StageState.cpp">
       <Filter>State\소스</Filter>
     </ClCompile>
+    <ClCompile Include="ProblemState.cpp">
+      <Filter>State\소스</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -57,6 +60,9 @@
       <Filter>State\헤더</Filter>
     </ClInclude>
     <ClInclude Include="StageState.h">
+      <Filter>State\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="ProblemState.h">
       <Filter>State\헤더</Filter>
     </ClInclude>
   </ItemGroup>
