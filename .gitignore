@@ -234,3 +234,6 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+#ignore Debug
+win32Project/[Dd]ebug/
