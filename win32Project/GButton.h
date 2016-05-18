@@ -9,6 +9,7 @@ class GButton
 private:
 	GImage* image;
 	RECT* m_rect;
+	 
 public:
 	GButton(GImage* image, int x, int y);
 	GButton(GImage * image, RECT * rect);
