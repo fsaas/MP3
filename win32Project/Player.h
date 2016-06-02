@@ -8,7 +8,11 @@ public:
 	Player();
 	~Player();
 
-	void stage1_walk();
+	void walk();
+	void jump();
+	void movingPlatform();
+
+
 
 };
 
