@@ -92,6 +92,7 @@
     <ClCompile Include="GWindow.cpp" />
     <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProblemState.cpp" />
     <ClCompile Include="StageState.cpp" />
   </ItemGroup>
@@ -107,6 +108,7 @@
     <ClInclude Include="GWindow.h" />
     <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="ProblemState.h" />
     <ClInclude Include="StageState.h" />
   </ItemGroup>
