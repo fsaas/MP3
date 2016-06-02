@@ -32,6 +32,15 @@
     <ClCompile Include="ProblemState.cpp">
       <Filter>State\소스</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
+    <ClCompile Include="backGround.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -65,6 +74,15 @@
     <ClInclude Include="ProblemState.h">
       <Filter>State\헤더</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
+    <ClInclude Include="backGround.h">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation.h">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="프레임워크">
@@ -87,6 +105,21 @@
     </Filter>
     <Filter Include="Resource">
       <UniqueIdentifier>{9d8544d0-fce4-41db-869b-e75a906bb854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="시뮬레이션">
+      <UniqueIdentifier>{fc5df2ba-6ec4-4233-a194-8c1ff3c0987f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="시뮬레이션\탄막">
+      <UniqueIdentifier>{b80aa35d-8c39-4e1c-b6d7-b86589b21292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="시뮬레이션\액션">
+      <UniqueIdentifier>{16a4a03b-db11-4055-b76a-ad5c25726db6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="시뮬레이션\탄막\소스">
+      <UniqueIdentifier>{d81d0d97-f26d-40e5-9671-eb5b91258927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="시뮬레이션\탄막\헤더">
+      <UniqueIdentifier>{33fbd550-9a27-4934-95d0-631b50b610e6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
