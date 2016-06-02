@@ -35,6 +35,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>시뮬레이션\액션</Filter>
     </ClCompile>
+    <ClCompile Include="backGround.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -69,6 +72,9 @@
       <Filter>State\헤더</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
+    <ClInclude Include="backGround.h">
       <Filter>시뮬레이션\액션</Filter>
     </ClInclude>
   </ItemGroup>

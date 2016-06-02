@@ -81,6 +81,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="backGround.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="GButton.cpp" />
@@ -97,6 +98,7 @@
     <ClCompile Include="StageState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="backGround.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockManager.h" />
     <ClInclude Include="GButton.h" />
