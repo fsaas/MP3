@@ -38,6 +38,9 @@
     <ClCompile Include="backGround.cpp">
       <Filter>시뮬레이션\액션</Filter>
     </ClCompile>
+    <ClCompile Include="simulation.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -75,6 +78,9 @@
       <Filter>시뮬레이션\액션</Filter>
     </ClInclude>
     <ClInclude Include="backGround.h">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation.h">
       <Filter>시뮬레이션\액션</Filter>
     </ClInclude>
   </ItemGroup>

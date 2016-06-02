@@ -95,6 +95,7 @@
     <ClCompile Include="mainProc.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProblemState.cpp" />
+    <ClCompile Include="simulation.cpp" />
     <ClCompile Include="StageState.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +113,7 @@
     <ClInclude Include="mainProc.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ProblemState.h" />
+    <ClInclude Include="simulation.h" />
     <ClInclude Include="StageState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

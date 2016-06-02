@@ -10,3 +10,8 @@ backGround::backGround()
 backGround::~backGround()
 {
 }
+
+void backGround::moving()
+{
+	
+}
