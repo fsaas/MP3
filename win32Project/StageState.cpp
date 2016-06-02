@@ -57,14 +57,14 @@ void StageState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
-	/*if (IsMouseDown(0)) {
+	if (IsMouseDown(0)) {
 		if (NButtons[0]->getClick()) {
-			StateMgr()->ChangeState(2);
+			StateMgr()->ChangeState(5);
 		}
 		if (NButtons[1]->getClick()) {
 			PostQuitMessage(0);
 		}
-	}*/
+	}
 }
 void StageState::OnDraw() {
 

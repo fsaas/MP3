@@ -39,7 +39,7 @@ ProblemState::ProblemState() : GState()
 void ProblemState::setButtonImage() {
 	for (int i = 0; i < 4; i++) {
 		if (this->Uanswer[i] == -1)
-			this->NButtons[i + 8]->setImage(BImage);
+			this->NButtons[i + 8]->setImage(new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp"));
 		else
 			this->NButtons[i + 8]->setImage(this->NButtons[this->Uanswer[i]]->getImage());
 	}
@@ -77,7 +77,7 @@ void ProblemState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
-	if (IsMouseDown(0)) {
+	if (IsMouseDown(1)) {
 		for (int i = 0; i < 13; i++) {
 			if (NButtons[i]->getClick()) {
 				if (i < 8) {
