@@ -14,6 +14,9 @@
 class ProblemState : public GState
 {
 private:
+	bool Click;
+	int ClickCool;
+	int time;
 	GImage* bgImage;
 	GButton* NButtons[15];
 	Block* Blocks[8];

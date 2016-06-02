@@ -1,8 +1,2 @@
-﻿  GStateManager.cpp
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  ProblemState.cpp
-c:\users\q2556n\desktop\git\win32project\problemstate.cpp(23): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-  코드를 생성하고 있습니다...
-  win32Project.vcxproj -> C:\Users\Q2556N\Desktop\git\Debug\win32Project.exe
+﻿  simulation.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'simulation.cpp': No such file or directory

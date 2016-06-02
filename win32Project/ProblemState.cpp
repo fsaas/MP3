@@ -5,6 +5,9 @@
 
 ProblemState::ProblemState() : GState()
 {
+	time = 0;
+	this->ClickCool = 10;
+	this->Click = true;
 	this->stageNum = -1;
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 	int x, y;
@@ -65,6 +68,13 @@ void ProblemState::OnDraw() {
 }
 
 void ProblemState::OnUpdate(float dt) {
+	if (this->Click == false) {
+		time++;
+		if (time > ClickCool) {
+		this->Click = true;
+		time = 0;
+		}
+	}
 	this->setButtonImage();
 	bool flag = false;
 	for (int i = 0; i < 13; i++) {
@@ -77,7 +87,8 @@ void ProblemState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
-	if (IsMouseDown(1)) {
+	if (IsMouseDown(0) && Click) {
+		this->Click = false;
 		for (int i = 0; i < 13; i++) {
 			if (NButtons[i]->getClick()) {
 				if (i < 8) {
