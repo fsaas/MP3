@@ -97,7 +97,6 @@
     <ClCompile Include="mainProc.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProblemState.cpp" />
-    <ClCompile Include="simulation.cpp" />
     <ClCompile Include="StageState.cpp" />
   </ItemGroup>
   <ItemGroup>
