@@ -111,6 +111,6 @@ public:
 	void getScore();			  //10	점수 변환
 
 	bool onGround();
-
+	bool onCollision();
 };
 

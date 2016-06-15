@@ -39,7 +39,6 @@ void Player::Initialize()
 	x = 100;
 	y = 100;
 	speed = 1;
-
 }
 
 void Player::Destroy()
@@ -88,4 +87,9 @@ bool Player::onGround()
 		return true;
 	else
 		return false;
+}
+
+bool Player::onCollision()
+{
+	return false;
 }

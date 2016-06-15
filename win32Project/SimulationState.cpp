@@ -5,7 +5,7 @@
 
 SimulationState::SimulationState()
 {
-	this->bImage = new GImage(Renderer(), )
+	this->bImage = new GImage(Renderer(), "./Resource/background.jpg");
 }
 
 
@@ -15,7 +15,7 @@ SimulationState::~SimulationState()
 
 void SimulationState::OnDraw()
 {
-	Renderer()->Draw(;
+	Renderer()->Draw(bImage, 0, 0);
 }
 
 void SimulationState::Update()
