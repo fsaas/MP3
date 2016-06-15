@@ -20,16 +20,15 @@ void Player::setY(float givenY)
 	y = givenY;
 }
 
-float Player::getX(float)
+float Player::getX()
 {	
 	return x;
 }
 
-float Player::getY(float)
+float Player::getY()
 {
 	return y;
 }
-
 
 void Player::Initialize()
 {
@@ -51,6 +50,15 @@ void Player::Update()
 {
 	if (IsKeyDown(VK_LEFT))
 	{
-		SetX()
+		setX(getX() - speed);
 	}
+	if (IsKeyDown(VK_RIGHT))
+	{
+		setX(getX() - speed);
+	}
+}
+
+void Player::Draw()
+{
+	Renderer()->Draw(img, getX(), getY());
 }

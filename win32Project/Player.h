@@ -7,16 +7,18 @@ private:
 	GImage *img;
 	float x;
 	float y;
+	float speed;
 public:
 	Player();
 	~Player();
 	void setX(float);
 	void setY(float);
-	float getX(float);
-	float getY(float);
+	float getX();
+	float getY();
 	void Initialize();
 	void Destroy();
 	void Update();
+	void Draw();
 	void walk();				  
 	/*					#1
 	( 정답 ) [ 오답 ]
