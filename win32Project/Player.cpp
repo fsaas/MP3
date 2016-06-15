@@ -38,6 +38,7 @@ void Player::Initialize()
 	//ÁÂÇ¥ ÃÊ±âÈ­
 	x = 100;
 	y = 100;
+	speed = 1;
 
 }
 
@@ -54,11 +55,19 @@ void Player::Update()
 	}
 	if (IsKeyDown(VK_RIGHT))
 	{
-		setX(getX() - speed);
+		setX(getX() + speed);
 	}
 }
 
 void Player::Draw()
 {
 	Renderer()->Draw(img, getX(), getY());
+}
+
+bool Player::onGround()
+{
+	if (getX() < 101)
+		return true;
+	else
+		return false;
 }

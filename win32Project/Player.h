@@ -5,6 +5,7 @@ class Player
 {
 private:
 	GImage *img;
+	bool isGround;
 	float x;
 	float y;
 	float speed;
@@ -109,7 +110,7 @@ public:
 	void ladder();				  //9	사다리 타기
 	void getScore();			  //10	점수 변환
 
-
+	bool onGround();
 
 };
 
