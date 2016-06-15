@@ -1,13 +1,18 @@
 #pragma once
+#include "GRenderer.h"
+#include "GImage.h"
 class Player
 {
 private:
-
-
+	GImage *img;
+	float x;
+	float y;
 public:
 	Player();
 	~Player();
-
+	void setX(float);
+	void setY(float);
+	void Initialize();
 	void walk();				  
 	/*					#1
 	( 정답 ) [ 오답 ]
