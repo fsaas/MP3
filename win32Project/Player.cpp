@@ -20,6 +20,16 @@ void Player::setY(float givenY)
 	y = givenY;
 }
 
+float Player::getX(float)
+{	
+	return x;
+}
+
+float Player::getY(float)
+{
+	return y;
+}
+
 
 void Player::Initialize()
 {
@@ -30,4 +40,17 @@ void Player::Initialize()
 	x = 100;
 	y = 100;
 
+}
+
+void Player::Destroy()
+{
+
+}
+
+void Player::Update()
+{
+	if (IsKeyDown(VK_LEFT))
+	{
+		SetX()
+	}
 }

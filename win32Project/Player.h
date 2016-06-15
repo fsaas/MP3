@@ -12,7 +12,11 @@ public:
 	~Player();
 	void setX(float);
 	void setY(float);
+	float getX(float);
+	float getY(float);
 	void Initialize();
+	void Destroy();
+	void Update();
 	void walk();				  
 	/*					#1
 	( 정답 ) [ 오답 ]
