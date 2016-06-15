@@ -49,6 +49,20 @@ void Player::Destroy()
 
 void Player::Update()
 {
+	if (onGround())
+	{
+		walk();
+		jump();
+	}
+}
+
+void Player::Draw()
+{
+	Renderer()->Draw(img, getX(), getY());
+}
+
+void Player::walk()
+{
 	if (IsKeyDown(VK_LEFT))
 	{
 		setX(getX() - speed);
@@ -59,9 +73,13 @@ void Player::Update()
 	}
 }
 
-void Player::Draw()
+void Player::jump()
 {
-	Renderer()->Draw(img, getX(), getY());
+	if (IsKeyDown(VK_UP))
+	{
+		while (getY() < 150)
+			setY(getY() + 1);
+	}
 }
 
 bool Player::onGround()
