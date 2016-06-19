@@ -14,6 +14,9 @@
 class ProblemState : public GState
 {
 private:
+	bool Click;
+	int ClickCool;
+	int time;
 	GImage* bgImage;
 	GButton* NButtons[15];
 	Block* Blocks[8];
@@ -62,16 +65,15 @@ private:
 
 	void insertAnswer(int clickedIndex) {
 		int i = 0;
-		if (Blocks[clickedIndex] != NILL) {
 			while (Uanswer[i] != -1) {
 				i++;
 			}
-		}
+			Uanswer[i] = clickedIndex;
 	}
 
 	void deleteAnswer(int clickedIndex) {
-		if (Uanswer[clickedIndex] != -1) {
-			Uanswer[clickedIndex] = -1;
+		if (Uanswer[clickedIndex-8] != -1) {
+			Uanswer[clickedIndex-8] = -1;
 		}
 	}
 

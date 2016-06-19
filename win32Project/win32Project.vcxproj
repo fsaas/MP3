@@ -72,15 +72,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="backGround.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockManager.cpp" />
     <ClCompile Include="GButton.cpp" />
@@ -92,10 +95,13 @@
     <ClCompile Include="GWindow.cpp" />
     <ClCompile Include="LogoState.cpp" />
     <ClCompile Include="mainProc.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProblemState.cpp" />
+    <ClCompile Include="SimulationState.cpp" />
     <ClCompile Include="StageState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="backGround.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockManager.h" />
     <ClInclude Include="GButton.h" />
@@ -107,7 +113,9 @@
     <ClInclude Include="GWindow.h" />
     <ClInclude Include="LogoState.h" />
     <ClInclude Include="mainProc.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="ProblemState.h" />
+    <ClInclude Include="SimulationState.h" />
     <ClInclude Include="StageState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

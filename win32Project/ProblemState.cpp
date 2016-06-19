@@ -1,12 +1,13 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "ProblemState.h"
 #include "mainProc.h"
-#include <stdio.h>
 
 #define BImage new GImage(Renderer(),"./Resource/ProblemImg/TempImage.bmp")
 
 ProblemState::ProblemState() : GState()
 {
+	time = 0;
+	this->ClickCool = 10;
+	this->Click = true;
 	this->stageNum = -1;
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 	int x, y;
@@ -41,7 +42,7 @@ ProblemState::ProblemState() : GState()
 void ProblemState::setButtonImage() {
 	for (int i = 0; i < 4; i++) {
 		if (this->Uanswer[i] == -1)
-			this->NButtons[i + 8]->setImage(BImage);
+			this->NButtons[i + 8]->setImage(new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp"));
 		else
 			this->NButtons[i + 8]->setImage(this->NButtons[this->Uanswer[i]]->getImage());
 	}
@@ -52,6 +53,7 @@ ProblemState::~ProblemState()
 	for (int i = 0; i < 13; i++) {
 		if (this->NButtons[i] != nullptr) delete NButtons[i];
 	}
+
 }
 
 void ProblemState::OnInitialize() {
@@ -66,6 +68,13 @@ void ProblemState::OnDraw() {
 }
 
 void ProblemState::OnUpdate(float dt) {
+	if (this->Click == false) {
+		time++;
+		if (time > ClickCool) {
+		this->Click = true;
+		time = 0;
+		}
+	}
 	this->setButtonImage();
 	bool flag = false;
 	for (int i = 0; i < 13; i++) {
@@ -78,7 +87,8 @@ void ProblemState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
-	if (IsMouseDown(0)) {
+	if (IsMouseDown(0) && Click) {
+		this->Click = false;
 		for (int i = 0; i < 13; i++) {
 			if (NButtons[i]->getClick()) {
 				if (i < 8) {
