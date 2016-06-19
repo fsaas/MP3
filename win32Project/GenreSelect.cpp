@@ -35,6 +35,14 @@ void GenreSelect::OnUpdate(float dt)
 			StateMgr()->SetState(new StageState(1), STAGE_STATE);
 			StateMgr()->ChangeState(STAGE_STATE);
 		}
+		if (stageButtons[2]->getClick()) {
+			StateMgr()->SetState(new StageState(2), STAGE_STATE);
+			StateMgr()->ChangeState(STAGE_STATE);
+		}
+		if (stageButtons[3]->getClick()) {
+			StateMgr()->SetState(new StageState(3), STAGE_STATE);
+			StateMgr()->ChangeState(STAGE_STATE);
+		}
 	}
 }
 void GenreSelect::OnDraw()

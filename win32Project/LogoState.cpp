@@ -33,7 +33,7 @@ void LogoState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
 	if (IsMouseDown(0)) {
 		if (NButtons[0]->getClick()) {
-			StateMgr()->ChangeState(5);
+			StateMgr()->ChangeState(1);
 		}
 		if (NButtons[1]->getClick()) {
 			PostQuitMessage(0);

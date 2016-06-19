@@ -1,5 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "ProblemState.h"
 #include "mainProc.h"
+#include <stdio.h>
 
 #define BImage new GImage(Renderer(),"./Resource/ProblemImg/TempImage.bmp")
 
@@ -50,7 +52,6 @@ ProblemState::~ProblemState()
 	for (int i = 0; i < 13; i++) {
 		if (this->NButtons[i] != nullptr) delete NButtons[i];
 	}
-
 }
 
 void ProblemState::OnInitialize() {
