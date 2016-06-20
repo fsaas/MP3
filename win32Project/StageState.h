@@ -15,8 +15,9 @@ class StageState : public GState
 private:
 	GImage* bgImage;
 	GImage* descImage;
-	GButton* NButtons[15];
-	Block* Blocks[8];
+	GButton* returnBtn;
+	GButton* NButtons[10];
+	Block* Blocks[10];
 	GFont * m_font;
 	int stageNum;
 	int genreType;
