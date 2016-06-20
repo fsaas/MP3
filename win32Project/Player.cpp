@@ -77,15 +77,18 @@ void Player::Update()
 		if (getY() < 580)
 		{
 			isJump = false;
+			isGround = false;
 		}
 	}
-	
-	if (!isJump&&!isGround)
+	else
 	{
-		setY(getY() + 3);
-		if (getY() > 620)
+		if (!isGround)
 		{
-			isJump = true;
+			setY(getY() + 3);
+			if (getY() > 640)
+			{
+				isGround = true;
+			}
 		}
 	}
 
@@ -132,8 +135,11 @@ void Player::ride()
 
 bool Player::onGround()
 {
-	if (getY() > 620)
+	if (getY() > 640)
+	{
+		isGround = true;
 		return true;
+	}
 	else
 		return false;
 }
