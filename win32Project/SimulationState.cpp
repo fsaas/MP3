@@ -5,8 +5,9 @@
 #include "Player.h"
 #include "Flag.h"
 
-SimulationState::SimulationState(bool Success)
+SimulationState::SimulationState(bool Success, int stageNum)
 {
+	this->m_stageNum = stageNum;
 	this->bImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	this->ground = new GImage(Renderer(), "./Resource/Ground.png");
 

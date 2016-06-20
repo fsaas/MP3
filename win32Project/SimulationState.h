@@ -14,9 +14,10 @@ private:
 	Player* player;
 	Flag* flag;
 	subFlag* subflag;
+	int m_stageNum;
 
 public:
-	SimulationState(bool Success);
+	SimulationState(bool Success, int stageNum);
 	~SimulationState();
 	void OnDraw();
 	void OnUpdate(float dt);
