@@ -5,7 +5,9 @@ class Player
 {
 private:
 	GImage *img;
+	GImage *img2;
 	bool isGround;
+	bool isRide;
 	float x;
 	float y;
 	float speed;
