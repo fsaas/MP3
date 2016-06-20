@@ -25,6 +25,7 @@ private:
 	int answer[4] = { -1,-1,-1,-1 };
 	int Uanswer[4] = { -1,-1,-1,-1 };
 	BlockManager* BM = new BlockManager();
+	char m_stageDesc[1024];
 
 	void setBlock(int BlockNum, int BlockIndex);
 	void setAnswer(int blockNum, int index);
