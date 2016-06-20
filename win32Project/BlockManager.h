@@ -1,6 +1,5 @@
 #pragma once
-#include "Block.h"
-
+class Block;
 class BlockManager
 {
 private:

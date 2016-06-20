@@ -41,6 +41,9 @@
     <ClCompile Include="SimulationState.cpp">
       <Filter>State\소스</Filter>
     </ClCompile>
+    <ClCompile Include="GFont.cpp">
+      <Filter>프레임워크\소스</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="SimulationState.h">
       <Filter>State\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="GFont.h">
+      <Filter>프레임워크\헤더</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
