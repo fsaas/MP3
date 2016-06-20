@@ -12,7 +12,7 @@
 StageState::StageState(int type) : GState()
 {	
 	this->m_font = new GFont("NanumGothic", 15);
-	this->returnBtn = new GButton(new GImage(Renderer(), "./Resource/returnBtn.bmp"), 130, 450);
+	this->returnBtn = new GButton(new GImage(Renderer(), "./Resource/Button.png"), 130, 450);
 	char temp[256] = { 0, };
 	FILE * fp = NULL;
 	if (type == 0) {
@@ -44,7 +44,7 @@ StageState::StageState(int type) : GState()
 			x = (j * 130) + 130;
 			y = (i * 150) + 150;
 			Blocks[i * 5 + j] = NILL;
-			sprintf(temp, "./Resource/StageImg/stageX.bmp");
+			sprintf(temp, "./Resource/StageImg/stage%d.png", i * 5 + j +1);
 			this->NButtons[i * 5 + j] = new GButton(new GImage(Renderer(), temp), x, y);
 		}
 	}
