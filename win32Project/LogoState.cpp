@@ -47,6 +47,7 @@ void LogoState::OnUpdate(float dt) {
 		bgAlpha = fadeIn(getBgAlpha());
 	if (bgFadeState == 1)
 		bgAlpha = fadeOut(getBgAlpha());
+	SetPrevMouseDown();
 }
 void LogoState::OnDraw() {
 	Renderer()->DrawSetAlpha(getImage(), 0, 0, getBgAlpha());

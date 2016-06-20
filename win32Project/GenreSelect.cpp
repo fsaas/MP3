@@ -46,6 +46,7 @@ void GenreSelect::OnUpdate(float dt)
 			StateMgr()->ChangeState(STAGE_STATE);
 		}
 	}
+	SetPrevMouseDown();
 }
 void GenreSelect::OnDraw()
 {

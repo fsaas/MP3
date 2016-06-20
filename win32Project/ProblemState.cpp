@@ -190,6 +190,7 @@ void ProblemState::OnUpdate(float dt) {
 
 		}
 	}
+	SetPrevMouseDown();
 }
 
 void ProblemState::OnDestroy() {
