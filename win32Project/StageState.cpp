@@ -24,6 +24,11 @@ StageState::StageState(int type) : GState()
 			fgets(descText[i], 1024, fp);
 		}
 	}
+	else {
+		for (int i = 0; i < 10; i++) {
+			descText[i][0] = '\0';
+		}
+	}
 	if(fp != NULL)	fclose(fp);
 
 	this->genreType = type;
@@ -85,6 +90,7 @@ void StageState::OnUpdate(float dt) {
 		}
 	}
 }
+
 void StageState::OnDraw() {
 	Renderer()->Draw(this->bgImage, 0, 0);
 	Renderer()->Draw(this->descImage, 800, 100);

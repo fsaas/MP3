@@ -9,16 +9,16 @@ LogoState::LogoState()
 	this->bgAlpha = 0xffffff;
 	this->bgFadeState = 0;
 	RECT r[3]; char temp[256] = { 0, };
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 2; i++) {
 		sprintf(temp, "./Resource/LogoButton%d.bmp", i + 1);
-		this->NButtons[i] = new GButton(new GImage(Renderer(), temp), 533, 168 + (i * 175));
+		this->NButtons[i] = new GButton(new GImage(Renderer(), temp), 533, 168 + (i * 225));
 	}
 }
 
 
 LogoState::~LogoState()
 {
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 2; i++) {
 		if (this->NButtons[i] != nullptr) delete NButtons[i];
 	}
 }
@@ -27,7 +27,7 @@ void LogoState::OnInitialize() {
 
 }
 void LogoState::OnUpdate(float dt) {
-	if (NButtons[0]->getOn()|| NButtons[1]->getOn()|| NButtons[2]->getOn())
+	if (NButtons[0]->getOn() || NButtons[1]->getOn())
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
@@ -50,8 +50,8 @@ void LogoState::OnUpdate(float dt) {
 }
 void LogoState::OnDraw() {
 	Renderer()->DrawSetAlpha(getImage(), 0, 0, getBgAlpha());
-	
-	for (int i = 0; i < 3; i++) {
+
+	for (int i = 0; i < 2; i++) {
 		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
 	}
 }

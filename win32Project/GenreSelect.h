@@ -10,9 +10,7 @@ class GenreSelect : public GState
 {
 private:
 	GImage* bgImage;
-	GImage* descImage;
 	GButton* stageButtons[4];
-	char* descText[4];
 	bool start = false;
 
 public:
