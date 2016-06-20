@@ -18,7 +18,7 @@ private:
 	bool Click;
 	int ClickCool;
 	int time;
-	GImage* bgImage;
+	GImage* bgImage, *tempImage;
 	GButton* NButtons[15];
 	Block* Blocks[8];
 	int stageNum;

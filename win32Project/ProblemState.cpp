@@ -10,6 +10,7 @@ ProblemState::ProblemState() : GState()
 	this->Click = true;
 	this->stageNum = -1;
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
+	this->tempImage = new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp");
 	int x, y;
 	char temp[100];
 	for (int i = 0; i < 13; i++) {
@@ -42,7 +43,7 @@ ProblemState::ProblemState() : GState()
 void ProblemState::setButtonImage() {
 	for (int i = 0; i < 4; i++) {
 		if (this->Uanswer[i] == -1)
-			this->NButtons[i + 8]->setImage(new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp"));
+			this->NButtons[i + 8]->setImage(this->tempImage);
 		else
 			this->NButtons[i + 8]->setImage(this->NButtons[this->Uanswer[i]]->getImage());
 	}
@@ -53,7 +54,8 @@ ProblemState::~ProblemState()
 	for (int i = 0; i < 13; i++) {
 		if (this->NButtons[i] != nullptr) delete NButtons[i];
 	}
-
+	if (bgImage != nullptr) delete bgImage;
+	if (tempImage != nullptr) delete tempImage;
 }
 
 void ProblemState::OnInitialize() {
