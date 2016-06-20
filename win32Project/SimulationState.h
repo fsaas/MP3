@@ -3,6 +3,7 @@
 class GImage;
 class GRenderer;
 class Player;
+class Flag;
 
 class SimulationState : public GState
 {
@@ -10,6 +11,7 @@ private:
 	GImage* bImage;
 	GImage* ground;
 	Player* player;
+	Flag* flag;
 
 public:
 	SimulationState(bool Success);

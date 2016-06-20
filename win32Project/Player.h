@@ -10,6 +10,7 @@ private:
 	subFlag *subF;
 	bool isGround;
 	bool isRide;
+	bool isJump;
 	float x;
 	float y;
 	float speed;
