@@ -1,4 +1,6 @@
 #include "Flag.h"
+#include "GRenderer.h"
+#include "GImage.h"
 #include "mainProc.h"
 
 Flag::Flag()

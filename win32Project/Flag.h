@@ -1,7 +1,7 @@
 #pragma once
-#include "GRenderer.h"
-#include "GImage.h"
-#include "Player.h"
+
+class GImage;
+class GRenderer;
 
 class Flag
 {

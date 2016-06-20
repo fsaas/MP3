@@ -17,8 +17,6 @@ Player::Player()
 	y = 640;
 	speed = 10;
 
-	//subFlag »ý¼º
-	subF = new subFlag();
 }
 
 
@@ -57,7 +55,6 @@ void Player::Update()
 	{
 		score = getY();
 		down();
-		subF->down();
 	}
 	else
 	{
@@ -161,7 +158,7 @@ void Player::down()
 {
 	while (getY()<640)
 	{
-		setY(getY() - 2);
+		setY(getY() + 2);
 	}
 }
 
