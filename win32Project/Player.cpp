@@ -2,6 +2,7 @@
 #include "mainProc.h"
 
 
+
 Player::Player()
 {
 
@@ -42,6 +43,9 @@ void Player::Initialize()
 	x = 100;
 	y = 148;
 	speed = 1;
+
+	//subFlag »ý¼º
+	subF = new subFlag();
 }
 
 void Player::Update()
@@ -49,7 +53,9 @@ void Player::Update()
 
 	if (onFlag())
 	{
-			
+		score = getY();
+		down();
+		subF->down();
 	}
 	else
 	{

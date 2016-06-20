@@ -1,16 +1,19 @@
 #pragma once
 #include "GRenderer.h"
 #include "GImage.h"
+#include "subFlag.h"
 class Player
 {
 private:
 	GImage *img;
 	GImage *img2;
+	subFlag *subF;
 	bool isGround;
 	bool isRide;
 	float x;
 	float y;
 	float speed;
+	int score;
 public:
 	Player();
 	~Player();

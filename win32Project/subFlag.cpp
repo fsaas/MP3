@@ -33,5 +33,8 @@ void subFlag::setY(float given)
 
 void subFlag::down()
 {
-
+	while (getY()>129)
+	{
+		setY(getY() - 2);
+	}
 }
