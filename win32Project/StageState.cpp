@@ -6,6 +6,7 @@
 #include "GFont.h"
 #include <stdio.h>
 #include "GWindow.h"
+#include "GButton.h"
 
 StageState::StageState(int type) : GState()
 {	
@@ -109,3 +110,5 @@ void StageState::OnDraw() {
 void StageState::OnDestroy() {
 
 }
+
+GImage * StageState::getButtonImage(int i) { return NButtons[i]->getImage(); }

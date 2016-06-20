@@ -3,12 +3,11 @@
 #include "GState.h"
 #include "GImage.h"
 #include "GWindow.h"
-#include "GButton.h"
 #include "BlockManager.h"
 
 #define NILL new Block("","")
 
-class GFont;
+class GFont; class GButton;
 
 class StageState : public GState
 {
@@ -27,7 +26,7 @@ public:
 	StageState(int type);
 	~StageState();
 	GImage* getImage() { return bgImage; }
-	GImage* getButtonImage(int i) { return NButtons[i]->getImage(); }
+	GImage* getButtonImage(int i);
 	void OnUpdate(float dt);
 	void OnDraw();
 	void OnDestroy();
