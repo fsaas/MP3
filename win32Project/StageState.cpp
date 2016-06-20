@@ -5,6 +5,7 @@
 #include "Block.h"
 #include "GFont.h"
 #include <stdio.h>
+#include "GWindow.h"
 
 StageState::StageState(int type) : GState()
 {	
@@ -89,6 +90,7 @@ void StageState::OnUpdate(float dt) {
 			StateMgr()->ChangeState(1);
 		}
 	}
+	SetPrevMouseDown();
 }
 
 void StageState::OnDraw() {

@@ -2,11 +2,12 @@
 
 #include <Windows.h>
 
-
 bool IsKeyDown(BYTE key);
 int GetMouseX();
 int GetMouseY();
 bool IsMouseDown(int mouseButton);
+bool PrevMouseDown(int mouseButton);
+void SetPrevMouseDown();
 
 class GStateManager;
 

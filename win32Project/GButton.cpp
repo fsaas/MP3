@@ -2,7 +2,6 @@
 #include "GImage.h"
 #include "GWindow.h"
 
-bool mouseBtnDown[3] = { 0, };
 
 GButton::GButton(GImage * image, int x, int y)
 {
@@ -37,10 +36,11 @@ bool GButton::getClick()
 {
 	if (GetMouseX() > m_rect->left && GetMouseX() < m_rect->right) {
 		if (GetMouseY() < m_rect->bottom && GetMouseY() > m_rect->top) {
-			return true;
+			if (IsMouseDown(0) && !PrevMouseDown(0)) {
+				return true;
+			}
 		}
 	}
-	
 	return false;
 }
 

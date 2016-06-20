@@ -5,6 +5,8 @@
 bool keyDown[256];
 int mouseX, mouseY;
 bool mouseButtonDown[3];
+bool prevMouseDown[3];
+
 bool IsKeyDown(BYTE key){
 	return keyDown[key];
 }
@@ -19,6 +21,14 @@ int GetMouseY(){
 
 bool IsMouseDown(int mouseButton){
 	return mouseButtonDown[mouseButton];
+}
+
+bool PrevMouseDown(int mouseButton) {
+	return prevMouseDown[mouseButton];
+}
+
+void SetPrevMouseDown() {
+	prevMouseDown[0] = IsMouseDown(0);
 }
 
 LRESULT CALLBACK GWindow::WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam){

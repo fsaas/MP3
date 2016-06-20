@@ -1,6 +1,5 @@
 #pragma once
 #include "GRenderer.h"
-#include "GWindow.h"
 
 class GImage;
 
