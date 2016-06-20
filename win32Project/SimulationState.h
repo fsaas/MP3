@@ -5,14 +5,16 @@
 #include "GWindow.h"
 
 
-class SimulationState
+class SimulationState : public GState
 {
 private:
 	GImage* bImage;
 public:
-	SimulationState();
+	SimulationState(bool success);
 	~SimulationState();
+	void OnUpdate(float dt);
 	void OnDraw();
-	void Update();
+	void OnDestroy();
+	void OnInitialize();
 };
 
