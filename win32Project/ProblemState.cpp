@@ -72,10 +72,12 @@ void ProblemState::setAnswer(int blockNum, int index)
 }
 
 bool ProblemState::isCorrect()
-{
-	if (this->Uanswer == this->answer)
-		return true;
-	return false;
+{	
+	bool flag = true;
+	for (int i = 0; i < 4; i++) {
+		if (this->Uanswer[i] != this->answer[i]) flag = false;
+	}
+	return flag;
 }
 
 void ProblemState::GOpen(char * filename, int stageNum)
@@ -221,11 +223,11 @@ void ProblemState::OnUpdate(float dt) {
 					this->refresh();
 				if (i == 13){
 					if (this->isCorrect()) {
-						StateMgr()->SetState(new SimulationState(true), 4);
+						StateMgr()->SetState(new SimulationState(true, m_stageNum), 4);
 						StateMgr()->ChangeState(4);
 					}
 					else {
-						StateMgr()->SetState(new SimulationState(false), 4);
+						StateMgr()->SetState(new SimulationState(false, m_stageNum), 4);
 						StateMgr()->ChangeState(4);
 					}
 				}
