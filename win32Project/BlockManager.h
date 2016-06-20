@@ -3,7 +3,7 @@ class Block;
 class BlockManager
 {
 private:
-	Block* block[160];
+	Block* block[127];
 public:
 	BlockManager();
 	~BlockManager();
