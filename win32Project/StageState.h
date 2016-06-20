@@ -8,14 +8,19 @@
 
 #define NILL new Block("","")
 
+class GFont;
+
 class StageState : public GState
 {
 private:
 	GImage* bgImage;
+	GImage* descImage;
 	GButton* NButtons[15];
 	Block* Blocks[8];
+	GFont * m_font;
 	int stageNum;
 	int genreType;
+	char descText[10][1024];
 	
 public:
 	StageState(int type);
