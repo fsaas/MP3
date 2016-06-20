@@ -12,6 +12,7 @@ SimulationState::SimulationState(bool Success)
 
 	this->player = new Player();
 	this->flag = new Flag();
+	this->subflag = new subFlag(player);
 }
 
 
@@ -31,12 +32,14 @@ void SimulationState::OnDraw()
 	Renderer()->Draw(ground, 0, 668);
 	player->Draw();
 	flag->Draw();
+	subflag->Draw();
 }
 
 void SimulationState::OnUpdate(float dt)
 {
 	player->Update();
-	flag->Draw();
+	flag->Update();
+	subflag->Update();
 }
 
 void SimulationState::OnDestroy()
