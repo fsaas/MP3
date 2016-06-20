@@ -44,6 +44,12 @@
     <ClCompile Include="GFont.cpp">
       <Filter>프레임워크\소스</Filter>
     </ClCompile>
+    <ClCompile Include="Flag.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
+    <ClCompile Include="subFlag.cpp">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -88,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="GFont.h">
       <Filter>프레임워크\헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
+      <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
+    <ClInclude Include="subFlag.h">
+      <Filter>시뮬레이션\액션</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

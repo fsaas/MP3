@@ -86,6 +86,7 @@
     <ClCompile Include="backGround.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockManager.cpp" />
+    <ClCompile Include="Flag.cpp" />
     <ClCompile Include="GButton.cpp" />
     <ClCompile Include="GenreSelect.cpp" />
     <ClCompile Include="GFont.cpp" />
@@ -100,11 +101,13 @@
     <ClCompile Include="ProblemState.cpp" />
     <ClCompile Include="SimulationState.cpp" />
     <ClCompile Include="StageState.cpp" />
+    <ClCompile Include="subFlag.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="backGround.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockManager.h" />
+    <ClInclude Include="Flag.h" />
     <ClInclude Include="GButton.h" />
     <ClInclude Include="GenreSelect.h" />
     <ClInclude Include="GFont.h" />
@@ -119,6 +122,7 @@
     <ClInclude Include="ProblemState.h" />
     <ClInclude Include="SimulationState.h" />
     <ClInclude Include="StageState.h" />
+    <ClInclude Include="subFlag.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

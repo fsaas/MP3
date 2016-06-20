@@ -4,11 +4,13 @@
 
 Player::Player()
 {
+
 }
 
 
 Player::~Player()
 {
+
 }
 
 void Player::setX(float givenX)
@@ -33,31 +35,45 @@ float Player::getY()
 void Player::Initialize()
 {
 	//이미지 로드
-	this->img = new GImage(Renderer(), "/ Resource / player.png");
+	this->img = new GImage(Renderer(), "./ Resource / player.png");
+	this->img = new GImage(Renderer(), "./ Resource / Action_Cart_Riding.bmp");
 
 	//좌표 초기화
 	x = 100;
-	y = 100;
+	y = 148;
 	speed = 1;
-}
-
-void Player::Destroy()
-{
-
 }
 
 void Player::Update()
 {
-	if (onGround())
+
+	if (onFlag())
+	{
+			
+	}
+	else
 	{
 		walk();
-		jump();
 	}
+		
+	if (onGround())
+	{
+		jump();
+
+	}
+	if (IsKeyDown(VK_F2))
+	{
+		ride();
+	}
+	
 }
 
 void Player::Draw()
 {
-	Renderer()->Draw(img, getX(), getY());
+	if(isRide)
+		Renderer()->Draw(img2, getX(), getY());
+	else
+		Renderer()->Draw(img, getX(), getY());
 }
 
 void Player::walk()
@@ -76,14 +92,21 @@ void Player::jump()
 {
 	if (IsKeyDown(VK_UP))
 	{
-		while (getY() < 150)
-			setY(getY() + 1);
+		while (getY() < 180 )
+			setY(getY() + 3);
 	}
+}
+
+
+void Player::ride()
+{
+	isRide = true;
+	speed = 5;
 }
 
 bool Player::onGround()
 {
-	if (getX() < 101)
+	if (getX() < 149)
 		return true;
 	else
 		return false;
@@ -93,3 +116,20 @@ bool Player::onCollision()
 {
 	return false;
 }
+
+bool Player::onFlag()
+{
+	if (getX() > 800 || getX() < 820)
+		return true;
+	else
+		return false;
+}
+
+void Player::down()
+{
+	while (getY() > 129)
+	{
+		setY(getY() - 2);
+	}
+}
+
