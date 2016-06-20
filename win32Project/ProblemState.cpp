@@ -11,7 +11,7 @@ ProblemState::ProblemState() : GState()
 	this->ClickCool = 10;
 	this->Click = false;
 	this->stageNum = -1;
-	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
+	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	this->tempImage = new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp");
 	int x, y;
 	char temp[100];

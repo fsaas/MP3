@@ -35,7 +35,7 @@ StageState::StageState(int type) : GState()
 
 	this->genreType = type;
 	this->descImage = new GImage(Renderer(), "./Resource/Font/rect.png");
-	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
+	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	int x, y;
 
 	for (int i = 0; i < 2; i++) {

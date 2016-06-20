@@ -5,7 +5,7 @@
 
 LogoState::LogoState()
 {
-	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
+	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	this->bgAlpha = 0xffffff;
 	this->bgFadeState = 0;
 	RECT r[3]; char temp[256] = { 0, };

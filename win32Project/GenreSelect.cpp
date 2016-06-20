@@ -5,11 +5,11 @@
 
 GenreSelect::GenreSelect() : GState()
 {
-	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");	//장르 선택씬 배경화면
-	this->stageButtons[0] = new GButton(new GImage(Renderer(), "./Resource/actionStageButton.bmp"), 100, 100);
-	this->stageButtons[1] = new GButton(new GImage(Renderer(), "./Resource/barrageStageButton.bmp"), 800, 100);
-	this->stageButtons[2] = new GButton(new GImage(Renderer(), "./Resource/puzzleStageButton.bmp"), 100, 400);
-	this->stageButtons[3] = new GButton(new GImage(Renderer(), "./Resource/shootingStageButton.bmp"), 800, 400);
+	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");	//장르 선택씬 배경화면
+	this->stageButtons[0] = new GButton(new GImage(Renderer(), "./Resource/actionStageButton.bmp"), 150, 50);
+	this->stageButtons[1] = new GButton(new GImage(Renderer(), "./Resource/barrageStageButton.bmp"), 750, 50);
+	this->stageButtons[2] = new GButton(new GImage(Renderer(), "./Resource/puzzleStageButton.bmp"), 150, 400);
+	this->stageButtons[3] = new GButton(new GImage(Renderer(), "./Resource/shootingStageButton.bmp"), 750, 400);
 }
 
 
