@@ -1,19 +1,21 @@
 #pragma once
-#include "GRenderer.h"
 #include "GState.h"
-#include "GImage.h"
-#include "GWindow.h"
-
+class GImage;
+class GRenderer;
+class Player;
 
 class SimulationState : public GState
 {
 private:
 	GImage* bImage;
+	GImage* ground;
+	Player* player;
+
 public:
 	SimulationState(bool Success);
 	~SimulationState();
 	void OnDraw();
-	void OnUpdate();
+	void OnUpdate(float dt);
 	void OnInitailize();
 	void OnDestroy();
 };

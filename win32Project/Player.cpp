@@ -5,7 +5,19 @@
 
 Player::Player()
 {
+	isGround = false;
+	isRide = false;
+	//이미지 로드
+	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_Character.bmp");
+	this->img2 = new GImage(Renderer(), "./Resource/Action_img/Action_Cart_Riding.bmp");
 
+	//좌표 초기화
+	x = 100;
+	y = 640;
+	speed = 10;
+
+	//subFlag 생성
+	subF = new subFlag();
 }
 
 
@@ -35,17 +47,6 @@ float Player::getY()
 
 void Player::Initialize()
 {
-	//이미지 로드
-	this->img = new GImage(Renderer(), "./ Resource / player.png");
-	this->img = new GImage(Renderer(), "./ Resource / Action_Cart_Riding.bmp");
-
-	//좌표 초기화
-	x = 100;
-	y = 148;
-	speed = 1;
-
-	//subFlag 생성
-	subF = new subFlag();
 }
 
 void Player::Update()
@@ -65,7 +66,6 @@ void Player::Update()
 	if (onGround())
 	{
 		jump();
-
 	}
 	if (IsKeyDown(VK_F2))
 	{
@@ -98,7 +98,7 @@ void Player::jump()
 {
 	if (IsKeyDown(VK_UP))
 	{
-		while (getY() < 180 )
+		while (getY() < 580 )
 			setY(getY() + 3);
 	}
 }
@@ -112,7 +112,7 @@ void Player::ride()
 
 bool Player::onGround()
 {
-	if (getX() < 149)
+	if (getY() > 620)
 		return true;
 	else
 		return false;
@@ -125,7 +125,7 @@ bool Player::onCollision()
 
 bool Player::onFlag()
 {
-	if (getX() > 800 || getX() < 820)
+	if (getX() > 800 && getX() < 820)
 		return true;
 	else
 		return false;
@@ -133,7 +133,7 @@ bool Player::onFlag()
 
 void Player::down()
 {
-	while (getY()>129)
+	while (getY()<640)
 	{
 		setY(getY() - 2);
 	}
