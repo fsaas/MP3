@@ -9,13 +9,14 @@ Player::Player()
 	isGround = false;
 	isRide = false;
 	isJump = false;
+
 	//이미지 로드
-	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_Character.bmp");
-	this->img2 = new GImage(Renderer(), "./Resource/Action_img/Action_Cart_Riding.bmp");
+	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_Character.png");
+	this->img2 = new GImage(Renderer(), "./Resource/Action_img/Action_Cart_Riding_64pixel.png");
 
 	//좌표 초기화
 	x = 100;
-	y = 640;
+	y = 610;
 	speed = 3;
 
 }
@@ -28,12 +29,12 @@ Player::Player(int given)
 	isRide = false;
 	isJump = false;
 	//이미지 로드
-	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_Character.bmp");
-	this->img2 = new GImage(Renderer(), "./Resource/Action_img/Action_Cart_Riding.bmp");
+	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_Character.png");
+	this->img2 = new GImage(Renderer(), "./Resource/Action_img/Action_Cart_Riding_64pixel.png");
 
 	//좌표 초기화
 	x = 100;
-	y = 640;
+	y = 610;
 	speed = 3;
 
 }
@@ -89,7 +90,7 @@ void Player::Update()
 	if (isJump)
 	{
 		setY(getY() - 3);
-		if (getY() < 580)
+		if (getY() < 550)
 		{
 			isJump = false;
 			isGround = false;
@@ -100,7 +101,7 @@ void Player::Update()
 		if (!isGround)
 		{
 			setY(getY() + 3);
-			if (getY() > 640)
+			if (getY() > 610)
 			{
 				isGround = true;
 			}
@@ -126,11 +127,13 @@ void Player::walk()
 {
 	if (IsKeyDown(VK_LEFT))
 	{
-		setX(getX() - speed);
+		if(getX()>0)
+			setX(getX() - speed);
 	}
 	if (IsKeyDown(VK_RIGHT))
 	{
-		setX(getX() + speed);
+		if(getX()<1316)
+			setX(getX() + speed);
 	}
 }
 
@@ -150,7 +153,7 @@ void Player::ride()
 
 bool Player::onGround()
 {
-	if (getY() > 640)
+	if (getY() > 610)
 	{
 		isGround = true;
 		return true;
@@ -174,7 +177,7 @@ bool Player::onFlag()
 
 void Player::down()
 {
-	while (getY()<640)
+	while (getY()<610)
 	{
 		setY(getY() + 1);
 	}

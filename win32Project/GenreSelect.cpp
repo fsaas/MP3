@@ -6,6 +6,7 @@
 GenreSelect::GenreSelect() : GState()
 {
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");	//장르 선택씬 배경화면
+	
 	this->stageButtons[0] = new GButton(new GImage(Renderer(), "./Resource/actionStageButton.png"), 120, 90);
 	this->stageButtons[1] = new GButton(new GImage(Renderer(), "./Resource/barrageStageButton.png"), 720, 90);
 	this->stageButtons[2] = new GButton(new GImage(Renderer(), "./Resource/puzzleStageButton.png"), 120, 400);
@@ -54,7 +55,6 @@ void GenreSelect::OnDraw()
 	for (int i = 0; i < 4; i++) {
 		Renderer()->Draw(stageButtons[i]->getImage(), stageButtons[i]->getR()->left, stageButtons[i]->getR()->top);
 	}
-
 }
 
 void GenreSelect::OnDestroy()

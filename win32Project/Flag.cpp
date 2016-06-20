@@ -7,7 +7,7 @@ Flag::Flag()
 {
 
 	//이미지 초기화
-	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_FLAG_Body.bmp");
+	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_FLAG_Body.png");
 
 	//좌표 초기화
 	x = 800;
