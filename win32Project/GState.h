@@ -2,8 +2,8 @@
 class GState
 {
 public:
-	GState();
-	~GState();
+	 GState();
+	virtual ~GState();
 
 public:
 	virtual void OnInitialize();

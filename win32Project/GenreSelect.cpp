@@ -3,14 +3,13 @@
 #include "StageState.h"
 #include "GFont.h"
 
-GenreSelect::GenreSelect()
+GenreSelect::GenreSelect() : GState()
 {
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");	//장르 선택씬 배경화면
-	this->descImage = new GImage(Renderer(), "./Resource/Font/rect.png");
 	this->stageButtons[0] = new GButton(new GImage(Renderer(), "./Resource/actionStageButton.bmp"), 100, 100);
-	this->stageButtons[1] = new GButton(new GImage(Renderer(), "./Resource/barrageStageButton.bmp"), 350, 100);
-	this->stageButtons[2] = new GButton(new GImage(Renderer(), "./Resource/puzzleStageButton.bmp"), 100, 275);
-	this->stageButtons[3] = new GButton(new GImage(Renderer(), "./Resource/shootingStageButton.bmp"), 350, 275);
+	this->stageButtons[1] = new GButton(new GImage(Renderer(), "./Resource/barrageStageButton.bmp"), 800, 100);
+	this->stageButtons[2] = new GButton(new GImage(Renderer(), "./Resource/puzzleStageButton.bmp"), 100, 400);
+	this->stageButtons[3] = new GButton(new GImage(Renderer(), "./Resource/shootingStageButton.bmp"), 800, 400);
 }
 
 
@@ -20,15 +19,15 @@ GenreSelect::~GenreSelect()
 		if (this->stageButtons[i] != nullptr) delete stageButtons[i];
 	}
 	if (this->bgImage != nullptr) delete bgImage;
-	if (this->descImage != nullptr) delete descImage;
 }
 
 void GenreSelect::OnUpdate(float dt)
 {
-	if (stageButtons[0]->getOn() || stageButtons[1]->getOn() || stageButtons[2]->getOn() || stageButtons[3])
+	if (stageButtons[0]->getOn() || stageButtons[1]->getOn() || stageButtons[2]->getOn() || stageButtons[3]->getOn())
 		SetCursor(LoadCursor(NULL, IDC_HAND));
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
+
 	if (IsMouseDown(0)) {
 		if (stageButtons[0]->getClick()) {
 			StateMgr()->SetState(new StageState(0), STAGE_STATE);
@@ -47,6 +46,7 @@ void GenreSelect::OnUpdate(float dt)
 			StateMgr()->ChangeState(STAGE_STATE);
 		}
 	}
+	SetPrevMouseDown();
 }
 void GenreSelect::OnDraw()
 {
@@ -54,7 +54,6 @@ void GenreSelect::OnDraw()
 	for (int i = 0; i < 4; i++) {
 		Renderer()->Draw(stageButtons[i]->getImage(), stageButtons[i]->getR()->left, stageButtons[i]->getR()->top);
 	}
-	Renderer()->Draw(this->descImage, 800, 100);
 
 }
 
