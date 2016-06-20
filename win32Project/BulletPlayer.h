@@ -12,8 +12,8 @@ public:
 	BulletPlayer();
 	~BulletPlayer();
 
-	void SetX();
-	void SetY();
+	void SetX(float x);
+	void SetY(float y);
 	float GetX();
 	float GetY();
 
