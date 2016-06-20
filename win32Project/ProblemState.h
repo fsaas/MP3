@@ -68,6 +68,8 @@ private:
 		int i = 0;
 			while (Uanswer[i] != -1) {
 				i++;
+				if (i > 4)
+					return;
 			}
 			Uanswer[i] = clickedIndex;
 	}

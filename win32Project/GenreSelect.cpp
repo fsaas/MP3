@@ -19,6 +19,8 @@ GenreSelect::~GenreSelect()
 	for (int i = 0; i < 4; i++) {
 		if (this->stageButtons[i] != nullptr) delete stageButtons[i];
 	}
+	if (this->bgImage != nullptr) delete bgImage;
+	if (this->descImage != nullptr) delete descImage;
 }
 
 void GenreSelect::OnUpdate(float dt)
