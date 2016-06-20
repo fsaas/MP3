@@ -3,6 +3,7 @@
 #include "Block.h"
 #include "SimulationState.h"
 #include "GFont.h"
+#include <stdio.h>
 #define BImage new GImage(Renderer(),"./Resource/ProblemImg/TempImage.bmp")
 
 ProblemState::ProblemState() : GState()
@@ -64,11 +65,9 @@ void ProblemState::setBlock(int BlockNum, int BlockIndex)
 
 }
 
-void ProblemState::setAnswer(int answer[4])
+void ProblemState::setAnswer(int blockNum, int index)
 {
-	for (int i = 0; i = 4; i++) {
-		this->answer[i] = answer[i];
-	}
+	this->answer[index] = blockNum;
 }
 
 bool ProblemState::isCorrect()
@@ -80,22 +79,22 @@ bool ProblemState::isCorrect()
 
 void ProblemState::GOpen(char * filename)
 {
-	std::ifstream inFile(filename);
-	char temp[100];
+	FILE * stageInfo = NULL;
+	stageInfo = fopen(filename, "r");
 	int tempA[4];
-	int i = 0;
-	while (!inFile.eof()) {
-		inFile.getline(temp, 100);
-		if (i < 8) {
-			setBlock(atoi(temp), i);
+	char blockType; int blockNum;
+	int blockIndex = 0, answerIndex = 0;
+	for (int i = 0; i < 12; i++) {
+		fscanf(stageInfo, "%c %d ", &blockType, &blockNum);
+		
+		if (blockType == 'B') {
+			setBlock(blockNum, blockIndex++);
 		}
-		if (i > 7 && i < 12) {
-			tempA[i - 8] = atoi(temp);
+		else if (blockType == 'A') {
+			setAnswer(blockNum, answerIndex++);
 		}
-		i++;
 	}
-	setAnswer(tempA);
-
+	fclose(stageInfo);
 }
 
 void ProblemState::insertAnswer(int clickedIndex)
@@ -153,6 +152,14 @@ void ProblemState::OnDraw() {
 		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
 	}
 	Renderer()->Draw(this->descImage, 800, 100);
+	for (int i = 0; i < 8; i++) {
+		if (NButtons[i]->getOn()) {
+			Renderer()->FontDraw(this->m_font, "Brief", 805, 105, 190, 170, 0xff000000);
+			Renderer()->FontDraw(this->m_font, this->Blocks[i]->getBrief(), 805, 135, 190, 170, 0xff000000);
+			Renderer()->FontDraw(this->m_font, "Actual", 805, 280, 190, 170, 0xff000000);
+			Renderer()->FontDraw(this->m_font, this->Blocks[i]->getActual(), 805, 315, 190, 170, 0xff000000);
+		}
+	}
 }
 
 void ProblemState::OnUpdate(float dt) {

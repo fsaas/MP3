@@ -70,3 +70,7 @@ void GStateManager::SetState(GState * state, int stateNum) {
 
 	m_states[stateNum] = state;
 }
+
+GState * GStateManager::GetState(int stateKey) {
+	return m_states[stateKey];
+}
