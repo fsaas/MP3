@@ -47,12 +47,12 @@ ProblemState::ProblemState() : GState()
 		if (i == 13) {
 			y = 650;
 			x = 1150;
-			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/Button.png"), x, y);
+			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/check.png"), x, y);
 		}
 		if (i == 14) {
 			y = 650;
 			x = 50;
-			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/Button.png"), x, y);
+			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/returnBtn.png"), x, y);
 		}
 	}
 }
