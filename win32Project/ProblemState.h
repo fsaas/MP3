@@ -10,7 +10,7 @@
 
 #define NILL new Block("","")
 
-class Block;
+class Block; class GFont;
 
 class ProblemState : public GState
 {
@@ -18,7 +18,8 @@ private:
 	bool Click;
 	int ClickCool;
 	int time;
-	GImage* bgImage, *tempImage;
+	GImage* bgImage, *tempImage, *descImage;
+	GFont * m_font;
 	GButton* NButtons[15];
 	Block* Blocks[8];
 	int stageNum;
