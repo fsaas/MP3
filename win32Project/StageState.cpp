@@ -2,6 +2,7 @@
 #include <iostream>
 #include "StageState.h"
 #include "mainProc.h"
+#include "Block.h"
 #include <stdio.h>
 
 StageState::StageState(int type) : GState()

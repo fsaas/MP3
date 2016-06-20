@@ -1,6 +1,7 @@
 #include "GRenderer.h"
 #include "GImage.h"
 #include "d3dx9.h"
+#include "GFont.h"
 GRenderer::GRenderer(GWindow * window)
 {
 
@@ -48,6 +49,12 @@ void GRenderer::Present(){
 void GRenderer::Draw(GImage * image, int x, int y){
 	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), 0xffffffff);
 }
+
+void GRenderer::FontDraw(GFont * font, char * text, int x, int y, int width, int height, D3DCOLOR color) {
+	RECT show = { x, y, x + width, y + height };
+	font->GetFont()->DrawTextA(this->d3dSprite, text, strlen(text), &show, DT_LEFT | DT_TOP | DT_WORDBREAK, color);
+}
+
 void GRenderer::DrawSetAlpha(GImage * image, int x, int y, unsigned int alpha) {
 	d3dSprite->Draw(image->getTexture(), NULL, NULL, &D3DXVECTOR3(x, y, 0), alpha);
 }

@@ -6,6 +6,7 @@
 #include "GImage.h"
 #include "GWindow.h"
 #include "GButton.h"
+#include "Block.h"
 #include "BlockManager.h"
 
 #define NILL new Block("","")

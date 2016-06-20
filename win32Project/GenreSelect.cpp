@@ -1,6 +1,7 @@
 #include "GenreSelect.h"
 #include "mainProc.h"
 #include "StageState.h"
+#include "GFont.h"
 
 GenreSelect::GenreSelect()
 {
@@ -49,6 +50,7 @@ void GenreSelect::OnDraw()
 {
 	for (int i = 0; i < 4; i++) {
 		Renderer()->Draw(stageButtons[i]->getImage(), stageButtons[i]->getR()->left, stageButtons[i]->getR()->top);		
+		Renderer()->FontDraw(new GFont("NanumGothic", 10), "테스트 출력입니다.", 10, 10, 100, 1000, 0xff000000);
 	}
 }
 
