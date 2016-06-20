@@ -1,16 +1,19 @@
 #include "SimulationState.h"
 #include "mainProc.h"
+#include "GRenderer.h"
+#include "GImage.h"
 
 
 
 SimulationState::SimulationState(bool Success)
 {
-	this->bImage = new GImage(Renderer(), "./Resource/background.jpg");
+	this->bImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 }
 
 
 SimulationState::~SimulationState()
 {
+
 }
 
 void SimulationState::OnDraw()

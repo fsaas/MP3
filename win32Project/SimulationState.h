@@ -1,14 +1,13 @@
 #pragma once
-#include "GRenderer.h"
 #include "GState.h"
-#include "GImage.h"
-#include "GWindow.h"
-
+class GImage;
+class GRenderer;
 
 class SimulationState : public GState
 {
 private:
 	GImage* bImage;
+	GImage* ground;
 public:
 	SimulationState(bool Success);
 	~SimulationState();
