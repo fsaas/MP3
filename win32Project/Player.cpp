@@ -4,11 +4,13 @@
 
 Player::Player()
 {
+
 }
 
 
 Player::~Player()
 {
+
 }
 
 void Player::setX(float givenX)
