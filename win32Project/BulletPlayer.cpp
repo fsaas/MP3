@@ -1,5 +1,6 @@
 #include "BulletPlayer.h"
 #include "mainProc.h"
+#include "GWindow.h"
 
 BulletPlayer::BulletPlayer()
 {
@@ -23,20 +24,20 @@ void BulletPlayer::Draw() {
 
 }
 
-void BulletPlayer::SetX() {
-
+void BulletPlayer::SetX(float x) {
+	this->m_xPos = x;
 }
 
-void BulletPlayer::SetY() {
-
+void BulletPlayer::SetY(float y) {
+	this->m_yPos = y;
 }
 
 float BulletPlayer::GetX() {
-	return -1;
+	return m_xPos;
 }
 
 float BulletPlayer::GetY() {
-	return -1;
+	return m_yPos;
 }
 
 /**
@@ -48,7 +49,18 @@ float BulletPlayer::GetY() {
 
 */
 void BulletPlayer::Move() {
-
+	if (IsKeyDown(VK_LEFT)) {
+		this->SetX(GetX() - this->speed);
+	}
+	if (IsKeyDown(VK_RIGHT)) {
+		this->SetX(GetX() + this->speed);
+	}
+	if (IsKeyDown(VK_UP)) {
+		this->SetY(GetY() - this->speed);
+	}
+	if (IsKeyDown(VK_DOWN)) {
+		this->SetY(GetY() + this->speed);
+	}
 }
 
 /**
