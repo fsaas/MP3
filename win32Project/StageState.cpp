@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "GWindow.h"
 #include "GButton.h"
+#include "ProblemState.h"
 
 StageState::StageState(int type) : GState()
 {	
@@ -81,12 +82,16 @@ void StageState::OnUpdate(float dt) {
 	else
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
 	if (IsMouseDown(0)) {
-		if (NButtons[0]->getClick()) {
-			StateMgr()->ChangeState(3);
+		ProblemState * temp = (ProblemState *)StateMgr()->GetState(3);
+		char tmpstr[255] = { 0, };
+		for (int i = 0; i < 10; i++) {
+			if (NButtons[i]->getClick()) {
+				sprintf(tmpstr, "./Resource/Stage/%d/Stage%d.txt", this->genreType, i);
+				temp->GOpen(tmpstr);
+				StateMgr()->ChangeState(3);
+			}
 		}
-		if (NButtons[1]->getClick()) {
-			PostQuitMessage(0);
-		}
+
 		if (returnBtn->getClick()) {
 			StateMgr()->ChangeState(1);
 		}

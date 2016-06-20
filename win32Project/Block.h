@@ -2,7 +2,7 @@
 class Block
 {
 private:
-	char brief[10];
+	char brief[100];
 	char Actual[100];
 
 public:

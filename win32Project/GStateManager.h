@@ -22,6 +22,7 @@ public:
 	void Draw();
 	void ChangeState(int changeStateKey);
 	void SetState(GState * state, int stateNum);
+	GState * GetState(int stateKey);
 
 private:
 	GState * m_states[STATE_NUM];

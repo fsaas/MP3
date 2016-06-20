@@ -1,5 +1,4 @@
 #pragma once
-#include <fstream>
 #include <stdlib.h>
 #include "GRenderer.h"
 #include "GState.h"
@@ -28,9 +27,8 @@ private:
 	BlockManager* BM = new BlockManager();
 
 	void setBlock(int BlockNum, int BlockIndex);
-	void setAnswer(int answer[4]);
+	void setAnswer(int blockNum, int index);
 	bool isCorrect();
-	void GOpen(char* filename);
 	void insertAnswer(int clickedIndex);
 	void deleteAnswer(int clickedIndex);
 	void refresh();
@@ -43,5 +41,6 @@ public:
 	void OnDraw();
 	void OnDestroy();
 	void OnInitialize();
+	void GOpen(char* filename);
 
 };
