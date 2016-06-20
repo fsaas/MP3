@@ -5,6 +5,25 @@
 
 Player::Player()
 {
+	stageNum = 1;
+	isGround = false;
+	isRide = false;
+	isJump = false;
+	//이미지 로드
+	this->img = new GImage(Renderer(), "./Resource/Action_img/Action_Character.bmp");
+	this->img2 = new GImage(Renderer(), "./Resource/Action_img/Action_Cart_Riding.bmp");
+
+	//좌표 초기화
+	x = 100;
+	y = 640;
+	speed = 3;
+
+}
+
+Player::Player(int given)
+{
+	stageNum = given;
+
 	isGround = false;
 	isRide = false;
 	isJump = false;
@@ -51,10 +70,9 @@ void Player::Initialize()
 void Player::Update()
 {
 	//깃발 위치에 있을 때
-	if (onFlag())
+	if (onFlag() && stageNum == 9)
 	{
-		score = getY();
-		down();
+
 	}
 	else
 	{

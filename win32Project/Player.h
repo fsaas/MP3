@@ -15,8 +15,10 @@ private:
 	float y;
 	float speed;
 	int score;
+	int stageNum;
 public:
 	Player();
+	Player(int);
 	~Player();
 	void setX(float);
 	void setY(float);

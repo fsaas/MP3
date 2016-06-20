@@ -11,7 +11,7 @@ SimulationState::SimulationState(bool Success, int stageNum)
 	this->bImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	this->ground = new GImage(Renderer(), "./Resource/Ground.png");
 
-	this->player = new Player();
+	this->player = new Player(stageNum);
 	this->flag = new Flag();
 	this->subflag = new subFlag(player);
 }
@@ -29,18 +29,28 @@ void SimulationState::OnInitailize()
 
 void SimulationState::OnDraw()
 {
+	//배경 & 그라운드 & 플레이어
 	Renderer()->Draw(bImage, 0, 0);
 	Renderer()->Draw(ground, 0, 668);
 	player->Draw();
-	flag->Draw();
-	subflag->Draw();
+
+
+	//스테이지 9
+	if (this->m_stageNum == 9)
+	{
+		flag->Draw();
+		subflag->Draw();
+	}
 }
 
 void SimulationState::OnUpdate(float dt)
 {
 	player->Update();
-	flag->Update();
-	subflag->Update();
+	if (this->m_stageNum == 9)
+	{
+		flag->Update();
+		subflag->Update();
+	}
 }
 
 void SimulationState::OnDestroy()
