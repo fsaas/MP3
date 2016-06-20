@@ -18,10 +18,10 @@ private:
 	int ClickCool;
 	int time;
 	GImage* bgImage, *tempImage, *descImage;
-	GFont * m_font;
+	GFont * m_font, *m_titleFont;
 	GButton* NButtons[15];
 	Block* Blocks[8];
-	int stageNum;
+	int m_stageNum;
 	int answer[4] = { -1,-1,-1,-1 };
 	int Uanswer[4] = { -1,-1,-1,-1 };
 	BlockManager* BM = new BlockManager();
@@ -36,11 +36,10 @@ private:
 public:
 	ProblemState();
 	~ProblemState();
-	void setStageNum(int StageNum) { this->stageNum = StageNum; }
 	void OnUpdate(float dt);
 	void OnDraw();
 	void OnDestroy();
 	void OnInitialize();
-	void GOpen(char* filename);
+	void GOpen(char* filename, int stageNum);
 
 };

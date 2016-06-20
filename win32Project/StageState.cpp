@@ -87,7 +87,7 @@ void StageState::OnUpdate(float dt) {
 		for (int i = 0; i < 10; i++) {
 			if (NButtons[i]->getClick()) {
 				sprintf(tmpstr, "./Resource/Stage/%d/Stage%d.txt", this->genreType, i);
-				temp->GOpen(tmpstr);
+				temp->GOpen(tmpstr, i);
 				StateMgr()->ChangeState(3);
 			}
 		}
