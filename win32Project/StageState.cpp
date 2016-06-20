@@ -5,6 +5,8 @@
 #include "Block.h"
 #include "GFont.h"
 #include <stdio.h>
+#include "GWindow.h"
+#include "GButton.h"
 
 StageState::StageState(int type) : GState()
 {	
@@ -22,6 +24,11 @@ StageState::StageState(int type) : GState()
 	if (fp != NULL) {
 		for (int i = 0; i < 10; i++) {
 			fgets(descText[i], 1024, fp);
+		}
+	}
+	else {
+		for (int i = 0; i < 10; i++) {
+			descText[i][0] = '\0';
 		}
 	}
 	if(fp != NULL)	fclose(fp);
@@ -84,7 +91,9 @@ void StageState::OnUpdate(float dt) {
 			StateMgr()->ChangeState(1);
 		}
 	}
+	SetPrevMouseDown();
 }
+
 void StageState::OnDraw() {
 	Renderer()->Draw(this->bgImage, 0, 0);
 	Renderer()->Draw(this->descImage, 800, 100);
@@ -99,4 +108,9 @@ void StageState::OnDraw() {
 	Renderer()->Draw(returnBtn->getImage(), returnBtn->getR()->left, returnBtn->getR()->top);
 }
 void StageState::OnDestroy() {
+
+}
+
+GImage * StageState::getButtonImage(int i) { return NButtons[i]->getImage();
+
 }
