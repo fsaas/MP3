@@ -83,6 +83,8 @@ void ProblemState::GOpen(char * filename, int stageNum)
 	this->m_stageNum = stageNum;
 	FILE * stageInfo = NULL;
 	stageInfo = fopen(filename, "r");
+	fgets(this->m_stageDesc, 1024, stageInfo);
+
 	int tempA[4];
 	char blockType; int blockNum;
 	int blockIndex = 0, answerIndex = 0;
@@ -171,11 +173,7 @@ void ProblemState::OnDraw() {
 		char temp[255];
 		sprintf(temp, "%d번 스테이지", this->m_stageNum + 1);
 		Renderer()->FontDraw(m_titleFont, temp, 805, 105, 390, 340, 0xff000000);
-		for (int i = 0; i < 8; i++) {
-			sprintf(temp, "%d번 - %s", i+1, this->Blocks[i]->getBrief());
-			Renderer()->FontDraw(this->m_font, temp, 805, 155 + (i * 30), 390, 340, 0xff000000);
-		}
-
+		Renderer()->FontDraw(this->m_font, this->m_stageDesc, 805, 155, 390, 340, 0xff000000);
 	}
 	else {
 		for (int i = 0; i < 8; i++) {
