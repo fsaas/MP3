@@ -10,11 +10,11 @@ class SimulationState : public GState
 private:
 	GImage* bImage;
 public:
-	SimulationState(bool success);
+	SimulationState(bool Success);
 	~SimulationState();
-	void OnUpdate(float dt);
 	void OnDraw();
+	void OnUpdate();
+	void OnInitailize();
 	void OnDestroy();
-	void OnInitialize();
 };
 

@@ -1,8 +1,7 @@
 #include "ProblemState.h"
 #include "mainProc.h"
-#include "SimulationState.h"
 #include "Block.h"
-
+#include "SimulationState.h"
 #define BImage new GImage(Renderer(),"./Resource/ProblemImg/TempImage.bmp")
 
 ProblemState::ProblemState() : GState()
@@ -40,13 +39,13 @@ ProblemState::ProblemState() : GState()
 			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/ProblemImg/TempRefesh.png"), x, y);
 		}
 		if (i == 13) {
-			y = 600;
-			x = 1200;
+			y = 650;
+			x = 1150;
 			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/Button.png"), x, y);
 		}
 		if (i == 14) {
-			y = 600;
-			x = 30;
+			y = 650;
+			x = 50;
 			this->NButtons[i] = new GButton(new GImage(Renderer(), "./Resource/Button.png"), x, y);
 		}
 	}
@@ -58,6 +57,7 @@ void ProblemState::setBlock(int BlockNum, int BlockIndex)
 		this->Blocks[BlockIndex] = NILL;
 	else
 		this->Blocks[BlockIndex] = BM->getBlock(BlockNum);
+
 }
 
 void ProblemState::setAnswer(int answer[4])
@@ -91,6 +91,7 @@ void ProblemState::GOpen(char * filename)
 		i++;
 	}
 	setAnswer(tempA);
+
 }
 
 void ProblemState::insertAnswer(int clickedIndex)
@@ -102,6 +103,7 @@ void ProblemState::insertAnswer(int clickedIndex)
 			return;
 	}
 	Uanswer[i] = clickedIndex;
+
 }
 
 void ProblemState::deleteAnswer(int clickedIndex)
@@ -109,12 +111,14 @@ void ProblemState::deleteAnswer(int clickedIndex)
 	if (Uanswer[clickedIndex - 8] != -1) {
 		Uanswer[clickedIndex - 8] = -1;
 	}
+
 }
 
 void ProblemState::refresh()
 {
-		for (int i = 0; i < 4; i++)
-			Uanswer[i] = -1;
+	for (int i = 0; i < 4; i++)
+		Uanswer[i] = -1;
+
 }
 
 void ProblemState::setButtonImage() {
@@ -178,14 +182,18 @@ void ProblemState::OnUpdate(float dt) {
 				}
 				if (i == 12)
 					this->refresh();
-				if (i == 13) {
-					this->isCorrect();
-					StateMgr()->SetState(new SimulationState(true), 4);
-					StateMgr()->ChangeState(4);
+				if (i == 13){
+					if (this->isCorrect()) {
+						StateMgr()->SetState(new SimulationState(true), 4);
+						StateMgr()->ChangeState(4);
+					}
+					else {
+						StateMgr()->SetState(new SimulationState(false), 4);
+						StateMgr()->ChangeState(4);
+					}
 				}
-				if (i == 14) {
+				if (i == 14)
 					StateMgr()->ChangeState(2);
-				}
 			}
 
 		}

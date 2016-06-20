@@ -3,7 +3,7 @@
 
 
 
-SimulationState::SimulationState(bool success)
+SimulationState::SimulationState(bool Success)
 {
 	this->bImage = new GImage(Renderer(), "./Resource/background.jpg");
 }
@@ -13,11 +13,16 @@ SimulationState::~SimulationState()
 {
 }
 
-void SimulationState::OnUpdate(float dt)
+void SimulationState::OnDraw()
+{
+	Renderer()->Draw(bImage, 0, 0);
+}
+
+void SimulationState::OnUpdate()
 {
 }
 
-void SimulationState::OnDraw()
+void SimulationState::OnInitailize()
 {
 }
 
@@ -25,6 +30,3 @@ void SimulationState::OnDestroy()
 {
 }
 
-void SimulationState::OnInitialize()
-{
-}
