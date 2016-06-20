@@ -15,7 +15,7 @@ Player::Player()
 	//좌표 초기화
 	x = 100;
 	y = 640;
-	speed = 10;
+	speed = 3;
 
 }
 
@@ -127,7 +127,7 @@ void Player::jump()
 void Player::ride()
 {
 	isRide = true;
-	speed = 5;
+	speed = 10;
 }
 
 bool Player::onGround()
@@ -158,7 +158,7 @@ void Player::down()
 {
 	while (getY()<640)
 	{
-		setY(getY() + 2);
+		setY(getY() + 1);
 	}
 }
 

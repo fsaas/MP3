@@ -54,7 +54,7 @@ void subFlag::Update()
 
 void subFlag::down()
 {
-	if(getY()<640)
+	if(getY()<600)
 	{
 		setY(getY() + 2);
 	}
