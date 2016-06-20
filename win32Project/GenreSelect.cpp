@@ -6,7 +6,7 @@
 GenreSelect::GenreSelect()
 {
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");	//장르 선택씬 배경화면
-	
+	this->descImage = new GImage(Renderer(), "./Resource/Font/rect.png");
 	this->stageButtons[0] = new GButton(new GImage(Renderer(), "./Resource/actionStageButton.bmp"), 100, 100);
 	this->stageButtons[1] = new GButton(new GImage(Renderer(), "./Resource/barrageStageButton.bmp"), 350, 100);
 	this->stageButtons[2] = new GButton(new GImage(Renderer(), "./Resource/puzzleStageButton.bmp"), 100, 275);
@@ -48,10 +48,12 @@ void GenreSelect::OnUpdate(float dt)
 }
 void GenreSelect::OnDraw()
 {
+	Renderer()->Draw(this->bgImage, 0, 0);
 	for (int i = 0; i < 4; i++) {
-		Renderer()->Draw(stageButtons[i]->getImage(), stageButtons[i]->getR()->left, stageButtons[i]->getR()->top);		
-		Renderer()->FontDraw(new GFont("NanumGothic", 10), "테스트 출력입니다.", 10, 10, 100, 1000, 0xff000000);
+		Renderer()->Draw(stageButtons[i]->getImage(), stageButtons[i]->getR()->left, stageButtons[i]->getR()->top);
 	}
+	Renderer()->Draw(this->descImage, 800, 100);
+
 }
 
 void GenreSelect::OnDestroy()

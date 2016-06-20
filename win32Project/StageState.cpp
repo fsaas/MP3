@@ -3,15 +3,33 @@
 #include "StageState.h"
 #include "mainProc.h"
 #include "Block.h"
+#include "GFont.h"
 #include <stdio.h>
 
 StageState::StageState(int type) : GState()
-{
-	this->genreType = type;
+{	
+	this->m_font = new GFont("NanumGothic", 10);
 
+	char temp[256] = { 0, };
+	FILE * fp = NULL;
+	if (type == 0) {
+		fp = fopen("./Resource/desc/Action.txt", "rt");
+	}
+	else if (type == 1) {
+		fp = fopen("./Resource/desc/Bullet.txt", "rt");
+	}
+	
+	if (fp != NULL) {
+		for (int i = 0; i < 10; i++) {
+			fgets(descText[i], 1024, fp);
+		}
+	}
+	fclose(fp);
+
+	this->genreType = type;
+	this->descImage = new GImage(Renderer(), "./Resource/Font/rect.png");
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
 	int x, y;
-	char temp[256] = { 0, };
 
 	for (int i = 0; i < 15; i++) {
 		if (i >= 0 && i <= 7) {
@@ -60,7 +78,7 @@ void StageState::OnUpdate(float dt) {
 		SetCursor(LoadCursor(NULL, IDC_ARROW));
 	if (IsMouseDown(0)) {
 		if (NButtons[0]->getClick()) {
-			StateMgr()->ChangeState(5);
+			StateMgr()->ChangeState(3);
 		}
 		if (NButtons[1]->getClick()) {
 			PostQuitMessage(0);
@@ -68,9 +86,15 @@ void StageState::OnUpdate(float dt) {
 	}
 }
 void StageState::OnDraw() {
-
+	Renderer()->Draw(this->bgImage, 0, 0);
+	Renderer()->Draw(this->descImage, 800, 100);
 	for (int i = 0; i < 15; i++) {
 		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
+	}
+	for (int i = 0; i < 15; i++) {
+		if (NButtons[i]->getOn()) {
+			Renderer()->FontDraw(this->m_font, this->descText[i], 805, 105, 490, 490, 0xff000000);
+		}
 	}
 }
 void StageState::OnDestroy() {
