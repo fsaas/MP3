@@ -12,7 +12,7 @@
 StageState::StageState(int type) : GState()
 {	
 	this->m_font = new GFont("NanumGothic", 15);
-	this->returnBtn = new GButton(new GImage(Renderer(), "./Resource/returnBtn.bmp"), 30, 450);
+	this->returnBtn = new GButton(new GImage(Renderer(), "./Resource/returnBtn.bmp"), 130, 450);
 	char temp[256] = { 0, };
 	FILE * fp = NULL;
 	if (type == 0) {
@@ -41,7 +41,7 @@ StageState::StageState(int type) : GState()
 
 	for (int i = 0; i < 2; i++) {
 		for (int j = 0; j < 5; j++) {
-			x = (j * 150) + 30;
+			x = (j * 130) + 130;
 			y = (i * 150) + 150;
 			Blocks[i * 5 + j] = NILL;
 			sprintf(temp, "./Resource/StageImg/stageX.bmp");
@@ -87,7 +87,7 @@ void StageState::OnUpdate(float dt) {
 		for (int i = 0; i < 10; i++) {
 			if (NButtons[i]->getClick()) {
 				sprintf(tmpstr, "./Resource/Stage/%d/Stage%d.txt", this->genreType, i);
-				temp->GOpen(tmpstr);
+				temp->GOpen(tmpstr, i);
 				StateMgr()->ChangeState(3);
 			}
 		}

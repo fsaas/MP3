@@ -11,11 +11,12 @@ ProblemState::ProblemState() : GState()
 	time = 0;
 	this->ClickCool = 10;
 	this->Click = false;
-	this->stageNum = -1;
+	this->m_stageNum = -1;
 	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	this->tempImage = new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp");
 	this->descImage = new GImage(Renderer(), "./Resource/Font/BlockRect.png");
-	this->m_font = new GFont("NanumGothic", 15);
+	this->m_font = new GFont("NanumGothic", 10);
+	this->m_titleFont = new GFont("NanumGothic", 25);
 
 	int x, y;
 	char temp[100];
@@ -77,10 +78,13 @@ bool ProblemState::isCorrect()
 	return false;
 }
 
-void ProblemState::GOpen(char * filename)
+void ProblemState::GOpen(char * filename, int stageNum)
 {
+	this->m_stageNum = stageNum;
 	FILE * stageInfo = NULL;
 	stageInfo = fopen(filename, "r");
+	fgets(this->m_stageDesc, 1024, stageInfo);
+
 	int tempA[4];
 	char blockType; int blockNum;
 	int blockIndex = 0, answerIndex = 0;
@@ -140,6 +144,8 @@ ProblemState::~ProblemState()
 	}
 	if (bgImage != nullptr) delete bgImage;
 	if (tempImage != nullptr) delete tempImage;
+	if (m_font != nullptr) delete m_font;
+	if (m_titleFont != nullptr) delete m_titleFont;
 }
 
 void ProblemState::OnInitialize() {
@@ -147,17 +153,36 @@ void ProblemState::OnInitialize() {
 }
 
 void ProblemState::OnDraw() {
+	bool flag = true;
 	Renderer()->Draw(bgImage, 0, 0);
+
 	for (int i = 0; i < 15; i++) {
 		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
 	}
+
 	Renderer()->Draw(this->descImage, 800, 100);
+	
 	for (int i = 0; i < 8; i++) {
 		if (NButtons[i]->getOn()) {
-			Renderer()->FontDraw(this->m_font, "Brief", 805, 105, 190, 170, 0xff000000);
-			Renderer()->FontDraw(this->m_font, this->Blocks[i]->getBrief(), 805, 135, 190, 170, 0xff000000);
-			Renderer()->FontDraw(this->m_font, "Actual", 805, 280, 190, 170, 0xff000000);
-			Renderer()->FontDraw(this->m_font, this->Blocks[i]->getActual(), 805, 315, 190, 170, 0xff000000);
+			flag = false;
+			break;
+		}
+	}
+
+	if(flag){
+		char temp[255];
+		sprintf(temp, "%d번 스테이지", this->m_stageNum + 1);
+		Renderer()->FontDraw(m_titleFont, temp, 805, 105, 390, 340, 0xff000000);
+		Renderer()->FontDraw(this->m_font, this->m_stageDesc, 805, 155, 390, 340, 0xff000000);
+	}
+	else {
+		for (int i = 0; i < 8; i++) {
+			if (NButtons[i]->getOn()) {
+				Renderer()->FontDraw(this->m_titleFont, "Brief", 805, 105, 390, 170, 0xff000000);
+				Renderer()->FontDraw(this->m_font, this->Blocks[i]->getBrief(), 805, 155, 390, 170, 0xff000000);
+				Renderer()->FontDraw(this->m_titleFont, "Actual", 805, 280, 190, 170, 0xff000000);
+				Renderer()->FontDraw(this->m_font, this->Blocks[i]->getActual(), 805, 330, 390, 170, 0xff000000);
+			}
 		}
 	}
 }
