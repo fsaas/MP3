@@ -127,7 +127,7 @@ bool Player::onFlag()
 
 void Player::down()
 {
-	while (getY() > 129)
+	while (getY()>129)
 	{
 		setY(getY() - 2);
 	}
