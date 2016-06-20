@@ -2,6 +2,7 @@
 #include "mainProc.h"
 #include "Block.h"
 #include "SimulationState.h"
+#include "GFont.h"
 #define BImage new GImage(Renderer(),"./Resource/ProblemImg/TempImage.bmp")
 
 ProblemState::ProblemState() : GState()
@@ -10,8 +11,11 @@ ProblemState::ProblemState() : GState()
 	this->ClickCool = 10;
 	this->Click = false;
 	this->stageNum = -1;
-	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.bmp");
+	this->bgImage = new GImage(Renderer(), "./Resource/LogoState.png");
 	this->tempImage = new GImage(Renderer(), "./Resource/ProblemImg/TempImage.bmp");
+	this->descImage = new GImage(Renderer(), "./Resource/Font/BlockRect.png");
+	this->m_font = new GFont("NanumGothic", 15);
+
 	int x, y;
 	char temp[100];
 	for (int i = 0; i < 15; i++) {
@@ -19,11 +23,11 @@ ProblemState::ProblemState() : GState()
 			Blocks[i] = NILL;
 			if (i >= 0 && i <= 3) {
 				y = 100;
-				x = 200 + ((i % 4) * 200);
+				x = 200 + ((i % 4) * 150);
 			}
 			if (i >= 4 && i <= 7) {
 				y = 250;
-				x = 200 + ((i % 4) * 200);
+				x = 200 + ((i % 4) * 150);
 			}
 			sprintf(temp, "./Resource/ProblemImg/TempImage%d.bmp", i + 1);
 			this->NButtons[i] = new GButton(new GImage(Renderer(), temp), x, y);
@@ -148,6 +152,7 @@ void ProblemState::OnDraw() {
 	for (int i = 0; i < 15; i++) {
 		Renderer()->Draw(NButtons[i]->getImage(), NButtons[i]->getR()->left, NButtons[i]->getR()->top);
 	}
+	Renderer()->Draw(this->descImage, 800, 100);
 }
 
 void ProblemState::OnUpdate(float dt) {

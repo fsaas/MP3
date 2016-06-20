@@ -50,6 +50,9 @@
     <ClCompile Include="subFlag.cpp">
       <Filter>시뮬레이션\액션</Filter>
     </ClCompile>
+    <ClCompile Include="BulletPlayer.cpp">
+      <Filter>시뮬레이션\탄막\소스</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="subFlag.h">
       <Filter>시뮬레이션\액션</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletPlayer.h">
+      <Filter>시뮬레이션\탄막\헤더</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
